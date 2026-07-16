@@ -28,11 +28,13 @@ body {
   min-height: 100vh;
   color: var(--cream);
   font-family: "Nunito", sans-serif;
-  background:
-    radial-gradient(circle at 10% 12%, rgba(243,210,141,.16) 0 4px, transparent 5px),
-    radial-gradient(circle at 85% 20%, rgba(255,214,230,.13) 0 3px, transparent 4px),
-    radial-gradient(circle at 28% 75%, rgba(138,166,111,.18) 0 2px, transparent 3px),
-    linear-gradient(145deg, #04130f 0%, #0d2a21 55%, #071c16 100%);
+  background-color: var(--forest-deep);
+  background-image:
+    linear-gradient(rgba(4, 19, 15, .54), rgba(4, 19, 15, .72)),
+    var(--page-background, url("images/forest-background.jpg"));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -534,4 +536,113 @@ h1 {
   .content-panel { padding: 24px 18px; }
   .page-hero { grid-template-columns: 1fr; }
   .page-hero .cat-badge { width: 90px; font-size: 3rem; }
+}
+
+
+/* Upload your own background image as:
+   images/forest-background.jpg
+   or replace the URL in --page-background below. */
+
+.page-shell {
+  position: relative;
+}
+
+.central-panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(18px, 3vw, 34px);
+  border-radius: 42px;
+  background: rgba(7, 28, 22, .88);
+  border: 2px solid rgba(199,216,174,.34);
+  box-shadow: 0 28px 70px rgba(0,0,0,.42);
+  backdrop-filter: blur(13px);
+}
+
+.central-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 92% 5%, rgba(243,166,198,.08), transparent 22%),
+    radial-gradient(circle at 5% 90%, rgba(138,166,111,.09), transparent 25%);
+}
+
+.central-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-button,
+.home-button,
+.button {
+  min-height: 54px;
+  padding: 13px 22px;
+  border: 3px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  font-weight: 900;
+  box-shadow:
+    0 8px 0 rgba(0,0,0,.25),
+    0 12px 24px rgba(0,0,0,.24);
+}
+
+.menu-button,
+.home-button {
+  background: var(--sage);
+  color: var(--ink);
+}
+
+.button {
+  background: var(--mushroom);
+  color: #fff;
+}
+
+.button.secondary {
+  background: var(--pink-soft);
+  color: var(--ink);
+}
+
+.menu-button:hover,
+.home-button:hover,
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 11px 0 rgba(0,0,0,.22),
+    0 16px 28px rgba(0,0,0,.28);
+}
+
+.menu-button:active,
+.home-button:active,
+.button:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 3px 0 rgba(0,0,0,.25),
+    0 7px 12px rgba(0,0,0,.18);
+}
+
+.dropdown a {
+  border-radius: 999px;
+  padding: 13px 17px;
+  margin: 6px 0;
+  background: rgba(199,216,174,.12);
+  border: 2px solid rgba(255,255,255,.08);
+}
+
+.dropdown a:hover {
+  background: var(--pink-soft);
+  color: var(--ink);
+}
+
+@media (max-width: 560px) {
+  .central-panel {
+    padding: 12px;
+    border-radius: 28px;
+  }
+
+  .menu-button,
+  .home-button {
+    min-width: 52px;
+    padding: 12px 15px;
+  }
 }
