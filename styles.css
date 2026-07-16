@@ -1600,3 +1600,34 @@ display:block;
     width: 100%;
   }
 }
+
+
+/* v26b - perfectly centred module demo */
+.module-demo{
+    width:100%;
+    display:flex !important;
+    flex-direction:column;
+    align-items:center !important;
+    justify-content:center;
+    grid-column:1 / -1;
+    margin:56px auto 0;
+    text-align:center;
+}
+
+.module-demo h2{
+    width:100%;
+    text-align:center !important;
+    margin:0 auto 24px;
+}
+
+.module-demo .video-embed{
+    width:min(96%,1180px);
+    max-width:1180px;
+    margin:0 auto !important;
+    align-self:center;
+}
+
+.video-embed{
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
