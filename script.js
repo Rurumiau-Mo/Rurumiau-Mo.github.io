@@ -35,4 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("has-frog-decoration");
   });
 
+
+  // Reusable decoration layers for major panels and cards.
+  const decoratedSelectors = [
+    ".hero",
+    ".content-panel",
+    ".card",
+    ".blog-post",
+    ".project-item",
+    ".feature",
+    ".bookshelf",
+    ".video-embed"
+  ];
+
+  document.querySelectorAll(decoratedSelectors.join(",")).forEach((element) => {
+    if (element.querySelector(":scope > .panel-decoration-layer")) return;
+
+    const layer = document.createElement("span");
+    layer.className = "panel-decoration-layer";
+    layer.setAttribute("aria-hidden", "true");
+
+    ["ivy-top", "ivy-left", "ivy-right", "moss-bottom"].forEach((name) => {
+      const part = document.createElement("span");
+      part.className = `panel-decoration panel-decoration-${name}`;
+      layer.appendChild(part);
+    });
+
+    element.appendChild(layer);
+  });
+
+  document.querySelectorAll(".topbar").forEach((bar) => {
+    if (bar.querySelector(":scope > .navbar-moss-layer")) return;
+    const moss = document.createElement("span");
+    moss.className = "navbar-moss-layer";
+    moss.setAttribute("aria-hidden", "true");
+    bar.appendChild(moss);
+  });
+
 });
