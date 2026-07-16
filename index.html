@@ -1,77 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home | Moss & Moon</title>
-<meta name="description" content="A pastel green and pink witchy creative website.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruru's Grimoire ~</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body><main class="page-shell">
-  <div class="cat-detail cat-face cat-whiskers cat-corner-left" aria-hidden="true">
-    <span class="cat-eyes"></span><span class="cat-nose"></span>
-  </div>
-  <div class="cat-detail cat-paws cat-corner-right" aria-hidden="true">🐾 · 🐾</div>
-  <div class="cat-detail cat-tail cat-low-left" aria-hidden="true"></div>
-  <div class="cat-detail cat-paws cat-low-right" aria-hidden="true">· 🐾</div>
+<body data-page="home" id="top">
+  <div class="sky-symbol sun"></div>
+  <div class="sky-symbol moon"></div>
+  <main class="site-shell">
 
-<nav class="nav">
+<nav class="navbar">
   <a class="brand" href="index.html">
-    <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1.8 3.1 4.5 5.3 8 6-2.8 1.7-4.6 4.3-5.3 7.8-1.5-2.4-3.6-4.2-6.5-5.2C10.5 8.8 11.8 5.9 12 2Z" fill="currentColor"/><path d="M5 14c.9 1.6 2.2 2.7 4 3-1.4.9-2.3 2.2-2.7 4-.8-1.3-1.8-2.2-3.3-2.7 1.2-.9 1.9-2.4 2-4.3Z" fill="currentColor" opacity=".7"/></svg>
-    </span>Moss & Moon
+    <span class="brand-mark">🍄</span>
+    Ruru's Grimoire ~
   </a>
-  <div class="nav-links"><a class="active" href="index.html">Home</a><a class="" href="blog.html">Blog</a><a class="" href="projects.html">Projects</a></div>
-  <a class="nav-button" href="#newsletter">Join the coven</a>
+  <div class="nav-links">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="blog.html" data-page="blog">Blog</a>
+    <a href="projects.html" data-page="projects">Projects</a>
+    <a href="project-editor.html" data-page="editor">Edit Project</a>
+  </div>
 </nav>
-<section class="hero">
-  <div>
-    <span class="eyebrow">✦ botanical magic for soft souls</span>
-    <h1>Find a little magic in the everyday.</h1>
-    <p>A gentle corner of the web for green witches, storytellers, artists, moon watchers, and anyone who prefers their enchantment soft, leafy, and pastel.</p>
-    <div class="hero-actions">
-      <a class="button button-primary" href="projects.html">Explore projects →</a>
-      <a class="button button-secondary" href="blog.html">Read the blog</a>
-    </div>
-  </div>
-  <div class="hero-card">
-    <div class="botanical"><div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="flower"></div></div>
-    <div class="floating-note"><strong>Tonight’s energy</strong>Soft beginnings, grounded choices, and a touch of rose magic.</div>
-  </div>
-</section>
-<section class="section section-soft">
-  <div class="section-heading"><h2>A home for stories, rituals, and growing ideas.</h2><p>Use this space to introduce your work, showcase current projects, and share thoughtful updates with your readers.</p></div>
-  <div class="cards">
-    <article class="card"><div class="icon-bubble">🌿</div><h3>Thoughtful writing</h3><p>Journal entries, essays, inspiration, behind-the-scenes notes, and gentle reflections.</p></article>
-    <article class="card"><div class="icon-bubble">☾</div><h3>Creative projects</h3><p>Showcase games, books, art, worldbuilding, crafts, or anything else you are nurturing.</p></article>
-    <article class="card"><div class="icon-bubble">✦</div><h3>Everyday magic</h3><p>Share the rituals, references, tools, and ideas that make your creative life feel special.</p></article>
-  </div>
-</section>
-<section class="section">
-  <div class="featured-post">
-    <div class="featured-art">❀</div>
-    <div class="featured-copy">
-      <span class="eyebrow">featured project</span>
-      <h2>The Moonlit Herbarium</h2>
-      <p>An illustrated collection of imaginary plants, their folklore, magical properties, and the landscapes where they grow.</p>
-      <a class="button" href="project.html">View project</a>
-    </div>
-  </div>
-</section>
 
-<section class="newsletter" id="newsletter">
-  <div><h2>Letters from the garden.</h2><p>Monthly rituals, project updates, cosy recommendations, and moonlit encouragement.</p></div>
-  <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='You’re in ✦';">
-    <input type="email" placeholder="Your email address" aria-label="Email address" required>
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
+    <section class="hero">
+      <div>
+        <span class="kicker">✦ Welcome to the quiet grove</span>
+        <h1>Moss,<br>Moonlight<br>& Magic.</h1>
+        <p>A soft forest home filled with tiny frogs, spotted mushrooms, cosy projects and a curious black cat who appears wherever you wander.</p>
+        <div class="button-row">
+          <a class="button" href="projects.html">Explore the grove</a>
+          <a class="button secondary" href="blog.html">Read blog posts</a>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="tree-crown"></div>
+        <div class="tree-trunk"></div>
+        <div class="frog"><div class="frog-face"></div></div>
+        <div class="mushroom one"><div class="cap"></div><div class="stem"></div></div>
+        <div class="mushroom two"><div class="cap"></div><div class="stem"></div></div>
 
-<footer class="site-footer">
-  <span>© 2026 Moss & Moon</span>
-  <div class="footer-links"><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Privacy</a></div>
+<div class="cat" aria-label="A friendly black cat">
+  <div class="cat-tail"></div>
+  <div class="cat-body"></div>
+  <div class="cat-head"><div class="cat-eyes"></div></div>
+</div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="kicker">A little woodland map</span>
+      <h2 class="section-title">Choose a path through the trees.</h2>
+      <p class="section-lead">Everything shares the same round, storybook styling: mossy greens, cheerful mushroom reds and soft pink details.</p>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">🐸</div>
+          <h3>Blog Posts</h3>
+          <p>Small thoughts, field notes and magical discoveries gathered beneath the canopy.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🍄</div>
+          <h3>Growing Projects</h3>
+          <p>Browse creative work arranged like tiny clearings, each with its own mood and story.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🐈‍⬛</div>
+          <h3>Cat Approved</h3>
+          <p>A black cat keeps watch across every page, just in case the frogs become too mischievous.</p>
+        </article>
+      </div>
+    </section>
+
+<footer class="footer">
+  Made beneath the mushrooms with <strong>moss, moonlight, and tiny pawprints.</strong>
 </footer>
-</main></body></html>
+<a class="floating-cat" href="#top" aria-label="Back to top">🐈‍⬛</a>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
