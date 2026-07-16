@@ -1631,3 +1631,24 @@ display:block;
     margin-left:auto !important;
     margin-right:auto !important;
 }
+
+
+/* v27 slightly smaller homepage artwork */
+.hero-artwork{
+    width:145% !important;
+    margin-right:-6% !important;
+}
+
+@media (max-width:820px){
+    .hero-artwork{
+        width:128% !important;
+        margin-right:-2% !important;
+    }
+}
+
+@media (max-width:560px){
+    .hero-artwork{
+        width:110% !important;
+        margin-right:0 !important;
+    }
+}
