@@ -1673,3 +1673,58 @@ display:block;
  position:relative;
  z-index:1;
 }
+
+
+/* v30 left logo image + favicon support */
+.title-with-cat{
+ display:flex;
+ align-items:center;
+ gap:8px;
+}
+.navbar-cat-left{
+ width:145px;
+ height:105px;
+ object-fit:contain;
+ flex:0 0 auto;
+}
+
+
+/* v31: verified homepage background and bottom project navigation */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.hero-background-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero > *:not(.hero-background-image) {
+  position: relative;
+  z-index: 1;
+}
+
+.project-bottom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+  margin: 34px auto 0 !important;
+  padding-top: 4px;
+}
+
+.module-demo + .project-bottom-nav {
+  margin-top: 34px !important;
+}
