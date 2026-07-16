@@ -1,71 +1,82 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Blog | Moss & Moon</title>
-<meta name="description" content="A pastel green and pink witchy creative website.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forest Notes — Moss & Moon</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body><main class="page-shell">
-  <div class="cat-detail cat-face cat-whiskers cat-corner-left" aria-hidden="true">
-    <span class="cat-eyes"></span><span class="cat-nose"></span>
-  </div>
-  <div class="cat-detail cat-paws cat-corner-right" aria-hidden="true">🐾 · 🐾</div>
-  <div class="cat-detail cat-tail cat-low-left" aria-hidden="true"></div>
-  <div class="cat-detail cat-paws cat-low-right" aria-hidden="true">· 🐾</div>
+<body data-page="blog" id="top">
+  <div class="sky-symbol sun"></div>
+  <div class="sky-symbol moon"></div>
+  <main class="site-shell">
 
-<nav class="nav">
+<nav class="navbar">
   <a class="brand" href="index.html">
-    <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1.8 3.1 4.5 5.3 8 6-2.8 1.7-4.6 4.3-5.3 7.8-1.5-2.4-3.6-4.2-6.5-5.2C10.5 8.8 11.8 5.9 12 2Z" fill="currentColor"/><path d="M5 14c.9 1.6 2.2 2.7 4 3-1.4.9-2.3 2.2-2.7 4-.8-1.3-1.8-2.2-3.3-2.7 1.2-.9 1.9-2.4 2-4.3Z" fill="currentColor" opacity=".7"/></svg>
-    </span>Moss & Moon
+    <span class="brand-mark">🍄</span>
+    Moss & Moon
   </a>
-  <div class="nav-links"><a class="" href="index.html">Home</a><a class="active" href="blog.html">Blog</a><a class="" href="projects.html">Projects</a></div>
-  <a class="nav-button" href="#newsletter">Join the coven</a>
-</nav>
-<header class="page-hero">
-  <span class="eyebrow">✦ notes from the garden</span>
-  <h1>The Moss & Moon Blog</h1>
-  <p>Personal essays, project diaries, seasonal inspiration, worldbuilding notes, and creative rituals.</p>
-  <div class="filters"><span class="filter-chip">All posts</span><span class="filter-chip">Creative process</span><span class="filter-chip">Witchy living</span><span class="filter-chip">Worldbuilding</span></div>
-</header>
-<section class="section">
-  <article class="featured-post">
-    <div class="featured-art">☾</div>
-    <div class="featured-copy">
-      <span class="eyebrow">featured article</span>
-      <h2>Making room for quiet creativity</h2>
-      <p>A soft approach to creating consistently without turning every idea into a deadline.</p>
-      <a class="button" href="#">Read article</a>
-    </div>
-  </article>
-</section>
-<section class="section section-soft">
-  <div class="section-heading"><h2>Latest writings</h2><p>Replace these cards with your own posts, categories, dates, and links.</p></div>
-  <div class="post-grid">
-    <article class="post-card"><div class="post-image">🌱</div><div class="post-body"><span class="meta">Creative process · 8 min</span><h3>How I nurture an idea before outlining it</h3><p>Letting a concept gather texture, mood, and meaning before asking it to become a plan.</p><a class="read-more" href="#">Read more →</a></div></article>
-    <article class="post-card"><div class="post-image">🕯️</div><div class="post-body"><span class="meta">Rituals · 5 min</span><h3>A small ritual for beginning again</h3><p>A gentle reset for difficult weeks, stalled projects, and tired creative minds.</p><a class="read-more" href="#">Read more →</a></div></article>
-    <article class="post-card"><div class="post-image">🍄</div><div class="post-body"><span class="meta">Worldbuilding · 11 min</span><h3>Designing forests that feel ancient</h3><p>Using ecology, folklore, ruins, and sensory detail to make fantasy landscapes feel lived in.</p><a class="read-more" href="#">Read more →</a></div></article>
-    <article class="post-card"><div class="post-image">📖</div><div class="post-body"><span class="meta">Books · 6 min</span><h3>Five stories with gentle gothic energy</h3><p>Atmospheric reading for rainy evenings, overgrown gardens, and candlelit rooms.</p><a class="read-more" href="#">Read more →</a></div></article>
-    <article class="post-card"><div class="post-image">🌙</div><div class="post-body"><span class="meta">Reflection · 7 min</span><h3>What the moon taught me about unfinished work</h3><p>Why creative cycles do not need to look linear in order to be meaningful.</p><a class="read-more" href="#">Read more →</a></div></article>
-    <article class="post-card"><div class="post-image">✂️</div><div class="post-body"><span class="meta">Craft · 9 min</span><h3>Building a visual language for your project</h3><p>Choosing repeated colours, symbols, textures, and shapes that make your work feel cohesive.</p><a class="read-more" href="#">Read more →</a></div></article>
+  <div class="nav-links">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="blog.html" data-page="blog">Blog</a>
+    <a href="projects.html" data-page="projects">Projects</a>
+    <a href="project-editor.html" data-page="editor">Edit Project</a>
   </div>
-</section>
+</nav>
 
-<section class="newsletter" id="newsletter">
-  <div><h2>Letters from the garden.</h2><p>Monthly rituals, project updates, cosy recommendations, and moonlit encouragement.</p></div>
-  <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='You’re in ✦';">
-    <input type="email" placeholder="Your email address" aria-label="Email address" required>
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
+    <section class="page-hero">
+      <span class="kicker">The mushroom journal</span>
+      <h1>Notes from beneath the leaves.</h1>
+      <p class="section-lead">Short stories, project updates and peculiar things spotted by moonlight.</p>
 
-<footer class="site-footer">
-  <span>© 2026 Moss & Moon</span>
-  <div class="footer-links"><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Privacy</a></div>
+<div class="cat" aria-label="A friendly black cat">
+  <div class="cat-tail"></div>
+  <div class="cat-body"></div>
+  <div class="cat-head"><div class="cat-eyes"></div></div>
+</div>
+
+    </section>
+    <section class="section">
+      <div class="post-list">
+        <article class="post">
+          <div class="post-thumb">🌙</div>
+          <div>
+            <div class="meta">Moon Notes · 5 min read</div>
+            <h3>Why the forest feels different after dark</h3>
+            <p>The same path can become an entirely new place once the moon begins painting silver shapes between the trees.</p>
+            <span class="tag">Moonlight</span><span class="tag">Inspiration</span>
+          </div>
+          <a class="button" href="#">Read note</a>
+        </article>
+        <article class="post">
+          <div class="post-thumb">🍄</div>
+          <div>
+            <div class="meta">Field Guide · 4 min read</div>
+            <h3>A very serious ranking of tiny mushrooms</h3>
+            <p>Judged by hat shape, colour, fairy potential and whether a frog would choose one as an umbrella.</p>
+            <span class="tag">Mushrooms</span><span class="tag">Frogs</span>
+          </div>
+          <a class="button" href="#">Read note</a>
+        </article>
+        <article class="post">
+          <div class="post-thumb">🐈‍⬛</div>
+          <div>
+            <div class="meta">Cat Report · 2 min read</div>
+            <h3>The mysterious case of the missing pink ribbon</h3>
+            <p>One ribbon vanished. One black cat refused to comment. Several pawprints were discovered nearby.</p>
+            <span class="tag">Cat</span><span class="tag">Mystery</span>
+          </div>
+          <a class="button" href="#">Read note</a>
+        </article>
+      </div>
+    </section>
+
+<footer class="footer">
+  Made beneath the mushrooms with <strong>moss, moonlight, and tiny pawprints.</strong>
 </footer>
-</main></body></html>
+<a class="floating-cat" href="#top" aria-label="Back to top">🐈‍⬛</a>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
