@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap');
 
 :root {
   --forest-deep: #071c16;
@@ -645,4 +645,136 @@ h1 {
     min-width: 52px;
     padding: 12px 15px;
   }
+}
+
+
+/* Navigation stacking fix */
+.topbar {
+  position: sticky;
+  z-index: 10000;
+  overflow: visible;
+}
+
+.menu-wrap {
+  position: relative;
+  z-index: 10002;
+}
+
+.dropdown {
+  z-index: 10003;
+}
+
+.central-panel,
+.hero,
+.content-panel,
+.card,
+.project-item,
+.blog-post,
+.feature {
+  position: relative;
+  z-index: 1;
+}
+
+/* Home hero uploadable image space */
+.home-image-frame {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 3px solid rgba(255,255,255,.16);
+  background:
+    linear-gradient(rgba(7,28,22,.16), rgba(7,28,22,.32)),
+    url("images/home-features.png") center / cover no-repeat,
+    linear-gradient(145deg, rgba(45,106,79,.78), rgba(7,28,22,.92));
+  box-shadow:
+    0 12px 0 rgba(0,0,0,.22),
+    0 22px 42px rgba(0,0,0,.28);
+}
+
+.home-image-frame::after {
+  content: "Add image: images/home-feature.jpg";
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 30px);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(7,28,22,.78);
+  color: var(--cream);
+  font-size: .84rem;
+  font-weight: 800;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.home-image-frame.has-image::after {
+  display: none;
+}
+
+.hero-visual {
+  min-width: 0;
+}
+
+.card .icon,
+.forest-floor,
+.cat-card,
+.cat-badge,
+.footer .cat-mark {
+  display: none !important;
+}
+
+@media (max-width: 820px) {
+  .home-image-frame {
+    min-height: 280px;
+  }
+}
+
+
+/* Fantasy title font */
+.site-title-mini,
+.hero h1,
+.page-hero h1 {
+  font-family: "Cinzel Decorative", "DM Serif Display", Georgia, serif;
+  letter-spacing: .015em;
+}
+
+.site-title-mini {
+  font-weight: 700;
+}
+
+.hero h1,
+.page-hero h1 {
+  font-weight: 900;
+  text-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
+
+/* Keep dropdown above every panel, card and decorative layer */
+.topbar {
+  z-index: 99999 !important;
+  overflow: visible !important;
+  isolation: isolate;
+}
+
+.menu-wrap {
+  z-index: 100001 !important;
+}
+
+.dropdown {
+  z-index: 100002 !important;
+  position: absolute;
+}
+
+.central-panel {
+  overflow: visible;
+}
+
+.hero,
+.content-panel,
+.card-grid,
+.blog-list,
+.project-list,
+.feature-grid {
+  z-index: 1;
 }
