@@ -544,3 +544,127 @@ h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.95;margin-bottom:18px}
     height: 38px;
   }
 }
+
+
+/* v2.2: background visibility, home motion, natural decoration sizing, centred nav buttons */
+
+/* Ensure the homepage background is actually visible inside the hero */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border-radius: inherit;
+}
+
+.hero-overlay {
+  z-index: 1 !important;
+  background: linear-gradient(
+    90deg,
+    rgba(7,28,22,.58) 0%,
+    rgba(7,28,22,.3) 50%,
+    rgba(7,28,22,.05) 100%
+  ) !important;
+}
+
+.hero-copy,
+.hero-visual {
+  z-index: 2 !important;
+}
+
+/* Restore subtle homepage animation */
+.hero-artwork {
+  animation: heroFloat 7s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(.3deg); }
+}
+
+.hero-copy {
+  animation: heroReveal .7s ease both;
+}
+
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Keep panel PNGs at their natural proportions instead of stretching */
+.panel-decor .ivy-top {
+  background-size: contain !important;
+  background-position: center top !important;
+}
+
+.panel-decor .ivy-left {
+  background-size: contain !important;
+  background-position: left center !important;
+}
+
+.panel-decor .ivy-right {
+  background-size: contain !important;
+  background-position: right center !important;
+}
+
+.panel-decor .moss-bottom {
+  background-size: contain !important;
+  background-position: center bottom !important;
+}
+
+.navbar-moss {
+  background-size: contain !important;
+  background-position: center bottom !important;
+}
+
+/* Vertically centre the top-bar controls */
+.topbar {
+  align-items: center !important;
+}
+
+.menu-wrap,
+.home-button {
+  align-self: center !important;
+}
+
+.menu-button,
+.home-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  transform: translateY(-1px);
+}
+
+.menu-button:hover,
+.home-button:hover {
+  transform: translateY(-3px);
+}
+
+.menu-button:active,
+.home-button:active {
+  transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-artwork,
+  .hero-copy {
+    animation: none !important;
+  }
+}
