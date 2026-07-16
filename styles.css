@@ -1652,3 +1652,24 @@ display:block;
         margin-right:0 !important;
     }
 }
+
+
+/* v29 png homepage background */
+.hero{
+ position:relative;
+ overflow:visible;
+}
+.hero-background-image{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:center;
+ z-index:0;
+ pointer-events:none;
+}
+.hero > *:not(.hero-background-image){
+ position:relative;
+ z-index:1;
+}
