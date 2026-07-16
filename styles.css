@@ -455,3 +455,135 @@ p { color: #587262; line-height: 1.75; }
   .newsletter-form input { padding: 13px 14px; }
   .site-footer { flex-direction: column; }
 }
+
+
+/* Decorative pastel cat details */
+.cat-detail {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+  color: var(--pink);
+  opacity: .7;
+  filter: drop-shadow(0 4px 8px rgba(242,184,207,.18));
+}
+
+.cat-paws {
+  font-size: 1.4rem;
+  letter-spacing: .45rem;
+  transform: rotate(-10deg);
+}
+
+.cat-face {
+  width: 64px;
+  height: 54px;
+  border: 3px solid var(--pink);
+  border-radius: 48% 48% 42% 42%;
+}
+
+.cat-face::before,
+.cat-face::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  width: 24px;
+  height: 24px;
+  border-top: 3px solid var(--pink);
+}
+
+.cat-face::before {
+  left: 4px;
+  border-left: 3px solid var(--pink);
+  transform: rotate(24deg);
+  border-radius: 5px 0 0 0;
+}
+
+.cat-face::after {
+  right: 4px;
+  border-right: 3px solid var(--pink);
+  transform: rotate(-24deg);
+  border-radius: 0 5px 0 0;
+}
+
+.cat-eyes {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  width: 5px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 26px 0 0 var(--pink);
+}
+
+.cat-nose {
+  position: absolute;
+  left: 50%;
+  top: 29px;
+  width: 7px;
+  height: 5px;
+  background: var(--pink);
+  border-radius: 50% 50% 65% 65%;
+  transform: translateX(-50%);
+}
+
+.cat-whiskers::before,
+.cat-whiskers::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  width: 20px;
+  height: 2px;
+  background: var(--pink);
+  box-shadow: 0 6px 0 var(--pink);
+}
+
+.cat-whiskers::before {
+  left: -16px;
+  transform: rotate(7deg);
+}
+
+.cat-whiskers::after {
+  right: -16px;
+  transform: rotate(-7deg);
+}
+
+.cat-tail {
+  width: 54px;
+  height: 54px;
+  border: 4px solid var(--pink);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  transform: rotate(34deg);
+}
+
+.cat-tail::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: 1px;
+  width: 22px;
+  height: 4px;
+  background: var(--pink);
+  border-radius: 999px;
+  transform: rotate(42deg);
+}
+
+.cat-corner-left { left: 26px; top: 115px; }
+.cat-corner-right { right: 36px; top: 145px; transform: rotate(8deg); }
+.cat-low-left { left: 42px; bottom: 115px; }
+.cat-low-right { right: 44px; bottom: 92px; }
+
+.page-shell {
+  position: relative;
+}
+
+@media (max-width: 700px) {
+  .cat-detail {
+    opacity: .5;
+    transform: scale(.82);
+  }
+  .cat-corner-left { left: 10px; top: 108px; }
+  .cat-corner-right { right: 14px; top: 130px; }
+}
