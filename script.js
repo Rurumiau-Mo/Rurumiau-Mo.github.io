@@ -23,10 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     image.src = src;
   };
 
-  testImage("images/home-features.png", () => {
-    document.querySelector(".home-image-frame")?.classList.add("has-image");
-  });
-
   testImage("images/navbar-cat.png", () => {
     document.body.classList.add("has-navbar-cat");
   });
