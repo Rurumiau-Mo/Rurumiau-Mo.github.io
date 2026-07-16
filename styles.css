@@ -1042,3 +1042,117 @@ body:not(.has-frog-decoration) .feature::before {
     width: min(240px, 80vw);
   }
 }
+
+
+/* v13: spine-only bookshelf books with forward fall hover */
+.shelf-back {
+  perspective: 1100px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 8px;
+  overflow: visible;
+}
+
+.project-book {
+  width: 74px;
+  height: 330px;
+  padding: 22px 10px;
+  border-radius: 8px 8px 4px 4px;
+  transform:
+    rotateY(0deg)
+    rotateZ(-1deg)
+    translateZ(0);
+  transform-origin: bottom center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  transition:
+    transform .34s cubic-bezier(.2,.75,.2,1),
+    box-shadow .34s ease,
+    filter .34s ease;
+}
+
+.project-book::before {
+  inset: 8px;
+  border-radius: 5px;
+}
+
+.project-book::after {
+  left: 7px;
+  right: auto;
+  width: 5px;
+}
+
+.project-book:hover,
+.project-book:focus-visible {
+  transform:
+    translateY(-8px)
+    translateZ(180px)
+    rotateX(-24deg)
+    rotateZ(2deg);
+  z-index: 20;
+  box-shadow:
+    0 34px 18px rgba(0,0,0,.18),
+    0 52px 58px rgba(0,0,0,.52),
+    0 0 30px rgba(243,166,198,.22),
+    inset -8px 0 0 rgba(0,0,0,.1),
+    inset 6px 0 0 rgba(255,255,255,.04);
+}
+
+.book-spine-accent {
+  top: 24px;
+  bottom: 24px;
+  left: 50%;
+  right: auto;
+  width: 2px;
+  height: auto;
+  transform: translateX(-50%);
+  box-shadow: 26px 0 0 rgba(241,209,138,.45);
+}
+
+.book-kicker {
+  margin: 0 0 12px;
+  font-size: .58rem;
+  letter-spacing: .1em;
+}
+
+.book-title {
+  font-size: 1.05rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.book-subtitle,
+.book-open-label {
+  display: none;
+}
+
+.empty-shelf-space {
+  min-width: 120px;
+  margin-left: 18px;
+}
+
+@media (max-width: 720px) {
+  .shelf-back {
+    justify-content: flex-start;
+    overflow-x: auto;
+    min-height: 390px;
+  }
+
+  .project-book {
+    flex: 0 0 68px;
+    width: 68px;
+    height: 300px;
+  }
+
+  .project-book:hover,
+  .project-book:focus-visible {
+    transform:
+      translateY(-6px)
+      translateZ(110px)
+      rotateX(-18deg)
+      rotateZ(1deg);
+  }
+}
