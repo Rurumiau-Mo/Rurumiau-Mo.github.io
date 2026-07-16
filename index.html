@@ -1,90 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>My First Website</title>
-
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-family: Arial, sans-serif;
-            text-align: center;
-
-            background: linear-gradient(
-                135deg,
-                #301934,
-                #8c3fc7
-            );
-
-            color: white;
-        }
-
-        main {
-            width: min(600px, 80%);
-            padding: 40px;
-
-            background-color: rgba(0, 0, 0, 0.25);
-            border-radius: 20px;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 12px 24px;
-
-            border: none;
-            border-radius: 10px;
-
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home | Moss & Moon</title>
+<meta name="description" content="A pastel green and pink witchy creative website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
+<body><main class="page-shell">
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1.8 3.1 4.5 5.3 8 6-2.8 1.7-4.6 4.3-5.3 7.8-1.5-2.4-3.6-4.2-6.5-5.2C10.5 8.8 11.8 5.9 12 2Z" fill="currentColor"/><path d="M5 14c.9 1.6 2.2 2.7 4 3-1.4.9-2.3 2.2-2.7 4-.8-1.3-1.8-2.2-3.3-2.7 1.2-.9 1.9-2.4 2-4.3Z" fill="currentColor" opacity=".7"/></svg>
+    </span>Moss & Moon
+  </a>
+  <div class="nav-links"><a class="active" href="index.html">Home</a><a class="" href="blog.html">Blog</a><a class="" href="projects.html">Projects</a></div>
+  <a class="nav-button" href="#newsletter">Join the coven</a>
+</nav>
+<section class="hero">
+  <div>
+    <span class="eyebrow">✦ botanical magic for soft souls</span>
+    <h1>Find a little magic in the everyday.</h1>
+    <p>A gentle corner of the web for green witches, storytellers, artists, moon watchers, and anyone who prefers their enchantment soft, leafy, and pastel.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="projects.html">Explore projects →</a>
+      <a class="button button-secondary" href="blog.html">Read the blog</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="botanical"><div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="flower"></div></div>
+    <div class="floating-note"><strong>Tonight’s energy</strong>Soft beginnings, grounded choices, and a touch of rose magic.</div>
+  </div>
+</section>
+<section class="section section-soft">
+  <div class="section-heading"><h2>A home for stories, rituals, and growing ideas.</h2><p>Use this space to introduce your work, showcase current projects, and share thoughtful updates with your readers.</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon-bubble">🌿</div><h3>Thoughtful writing</h3><p>Journal entries, essays, inspiration, behind-the-scenes notes, and gentle reflections.</p></article>
+    <article class="card"><div class="icon-bubble">☾</div><h3>Creative projects</h3><p>Showcase games, books, art, worldbuilding, crafts, or anything else you are nurturing.</p></article>
+    <article class="card"><div class="icon-bubble">✦</div><h3>Everyday magic</h3><p>Share the rituals, references, tools, and ideas that make your creative life feel special.</p></article>
+  </div>
+</section>
+<section class="section">
+  <div class="featured-post">
+    <div class="featured-art">❀</div>
+    <div class="featured-copy">
+      <span class="eyebrow">featured project</span>
+      <h2>The Moonlit Herbarium</h2>
+      <p>An illustrated collection of imaginary plants, their folklore, magical properties, and the landscapes where they grow.</p>
+      <a class="button" href="project.html">View project</a>
+    </div>
+  </div>
+</section>
 
-<body>
-    <main>
-        <h1>Hello, world!</h1>
+<section class="newsletter" id="newsletter">
+  <div><h2>Letters from the garden.</h2><p>Monthly rituals, project updates, cosy recommendations, and moonlit encouragement.</p></div>
+  <form class="newsletter-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='You’re in ✦';">
+    <input type="email" placeholder="Your email address" aria-label="Email address" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
 
-        <p>
-            This is my first website hosted through GitHub Pages.
-        </p>
-
-        <button onclick="showMessage()">
-            Click me
-        </button>
-    </main>
-
-    <script>
-        function showMessage() {
-            alert("My website is working!");
-        }
-    </script>
-</body>
-</html>
+<footer class="site-footer">
+  <span>© 2026 Moss & Moon</span>
+  <div class="footer-links"><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Privacy</a></div>
+</footer>
+</main></body></html>
