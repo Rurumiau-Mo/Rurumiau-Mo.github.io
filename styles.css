@@ -1565,3 +1565,38 @@ display:block;
     margin-right: 0;
   }
 }
+
+
+/* v24 module demo */
+.module-demo{
+  margin-top:48px;
+}
+.module-demo h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+
+/* v25: larger centred Module Demo */
+.module-demo {
+  width: 100%;
+  margin: 56px auto 0;
+  text-align: center;
+}
+
+.module-demo h2 {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.module-demo .video-embed {
+  width: 96%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+@media (max-width: 820px) {
+  .module-demo .video-embed {
+    width: 100%;
+  }
+}
