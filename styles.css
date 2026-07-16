@@ -1357,3 +1357,85 @@ body:not(.has-frog-decoration) .feature::before {
     transform: translateY(-8px);
   }
 }
+
+
+/* v19: real image-based project book spines */
+.shelf-back {
+  gap: 0 !important;
+  align-items: flex-end;
+  overflow: visible;
+}
+
+.project-book {
+  position: relative;
+  width: 220px;
+  height: 360px;
+  flex: 0 0 220px;
+  padding: 0;
+  margin-right: -34px;
+  border: 0;
+  background: none !important;
+  box-shadow: none;
+  overflow: visible;
+  transform: rotateZ(-.5deg);
+  transform-origin: bottom center;
+  transition:
+    transform .24s ease,
+    filter .24s ease;
+}
+
+.project-book-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(10px 12px 12px rgba(0,0,0,.32));
+  transition:
+    transform .24s ease,
+    filter .24s ease;
+  pointer-events: none;
+}
+
+.project-book:hover,
+.project-book:focus-visible {
+  transform: translateY(-12px) rotateZ(.5deg);
+  z-index: 20;
+  filter: none;
+  box-shadow: none;
+}
+
+.project-book:hover .project-book-image,
+.project-book:focus-visible .project-book-image {
+  transform: scale(1.02);
+  filter:
+    drop-shadow(10px 18px 16px rgba(0,0,0,.38))
+    drop-shadow(0 0 12px rgba(255,159,67,.2));
+}
+
+.book-sparkles {
+  inset: -6px 10px -8px 10px;
+}
+
+.empty-shelf-space {
+  margin-left: 0;
+  min-width: 180px;
+}
+
+@media (max-width: 720px) {
+  .shelf-back {
+    overflow-x: auto;
+  }
+
+  .project-book {
+    width: 180px;
+    height: 310px;
+    flex-basis: 180px;
+    margin-right: -28px;
+  }
+
+  .project-book:hover,
+  .project-book:focus-visible {
+    transform: translateY(-9px) rotateZ(.3deg);
+  }
+}
