@@ -1802,3 +1802,100 @@ display:block;
   position: relative;
   z-index: 2 !important;
 }
+
+
+/* v34: keep both top-bar images in one horizontal row */
+.title-with-cat {
+  display: inline-grid !important;
+  grid-template-columns: auto minmax(max-content, auto) auto;
+  align-items: center !important;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.navbar-side-image {
+  position: static !important;
+  display: block !important;
+  width: 132px;
+  height: 96px;
+  object-fit: contain;
+  object-position: center;
+  flex: none;
+  transform: none !important;
+}
+
+.navbar-cat-left,
+.navbar-cat-right {
+  right: auto !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+
+.navbar-cat-slot {
+  display: none !important;
+}
+
+.navbar-side-image::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 820px) {
+  .navbar-side-image {
+    width: 96px;
+    height: 72px;
+  }
+
+  .title-with-cat {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar-side-image {
+    width: 50px;
+    height: 44px;
+  }
+
+  .title-with-cat {
+    gap: 2px;
+  }
+}
+
+
+/* v35: direct visible homepage background layer */
+.hero {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.hero-background-image {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+}
+
+.hero::before {
+  z-index: 1 !important;
+}
+
+.hero > *:not(.hero-background-image) {
+  position: relative !important;
+  z-index: 2 !important;
+}
