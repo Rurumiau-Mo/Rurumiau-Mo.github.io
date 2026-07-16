@@ -26,4 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
   testImage("images/navbar-cat.png", () => {
     document.body.classList.add("has-navbar-cat");
   });
+
+  testImage("images/mushroom-decoration.png", () => {
+    document.body.classList.add("has-mushroom-decoration");
+  });
+
+  testImage("images/frog-decoration.png", () => {
+    document.body.classList.add("has-frog-decoration");
+  });
+
 });
