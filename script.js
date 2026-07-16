@@ -16,4 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dropdown.addEventListener("click", (event) => event.stopPropagation());
   }
+
+  const testImage = (src, onLoad) => {
+    const image = new Image();
+    image.onload = onLoad;
+    image.src = src;
+  };
+
+  testImage("images/home-features.png", () => {
+    document.querySelector(".home-image-frame")?.classList.add("has-image");
+  });
+
+  testImage("images/navbar-cat.png", () => {
+    document.body.classList.add("has-navbar-cat");
+  });
 });
