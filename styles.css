@@ -1481,3 +1481,22 @@ body:not(.has-frog-decoration) .feature::before {
    margin-right:0;
  }
 }
+
+
+/* v21 project links */
+.project-links{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:16px;
+ margin:36px auto 8px;
+}
+.project-primary{
+ min-width:260px;
+ background:#f3a6c6 !important;
+ color:#173022 !important;
+ font-size:1.05rem;
+}
+.project-secondary{
+ min-width:220px;
+}
