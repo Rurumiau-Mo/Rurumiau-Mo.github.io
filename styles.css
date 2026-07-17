@@ -1626,7 +1626,7 @@ body.site-background-page .central-panel {
   }
 
   .home-page .home-feature-panel .panel-corner-tl {
-    left: -38px !important;
+    left: var(--corner-top-left-offset-x) !important;
   }
 
   .home-page .home-feature-panel .panel-corner-tr {
@@ -1638,7 +1638,7 @@ body.site-background-page .central-panel {
   }
 
   .home-page .home-feature-panel .panel-corner-tl, .home-page .home-feature-panel .panel-corner-tr {
-    top: -28px !important;
+    top: var(--corner-top-offset-y) !important;
     width: clamp(285px, 42vw, 390px) !important;
   }
 
@@ -1890,17 +1890,21 @@ body.site-background-page .central-panel {
 
 /* Current layout controls — edit these values for future visual adjustments. */
 :root {
-  --corner-top-left-offset-x: -62px;
+  /* Top corners: 1 cm higher; top-left also shifted clearly to the right. */
+  --corner-top-offset-y: -78px;
+  --corner-top-left-offset-x: -10px;
 }
 
 @media (max-width: 900px) {
   :root {
-    --corner-top-left-offset-x: -32px;
+    --corner-top-offset-y: -66px;
+    --corner-top-left-offset-x: 0px;
   }
 }
 
 @media (max-width: 620px) {
   :root {
-    --corner-top-left-offset-x: -8px;
+    --corner-top-offset-y: -58px;
+    --corner-top-left-offset-x: 8px;
   }
 }
