@@ -951,118 +951,76 @@ body.site-background-page .central-panel {
   }
 }
 
-
-/* Top bar redesign: Home | Pages | Large title | centred large image */
-.topbar {
-  display: grid !important;
-  grid-template-columns: auto auto max-content minmax(180px, 1fr) !important;
-  align-items: center !important;
-  column-gap: 14px !important;
-  min-height: 126px !important;
-  padding: 8px 20px !important;
-}
-
-.topbar > .home-button {
-  grid-column: 1;
-  align-self: center !important;
-}
-
-.topbar > .menu-wrap {
-  grid-column: 2;
-  align-self: center !important;
-}
-
+/* Safe top-bar revision — CSS only, preserving the original page structure */
 .topbar > .title-cluster {
-  grid-column: 3;
-  display: flex !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: max-content minmax(0, 1fr) !important;
   align-items: center !important;
-  justify-content: flex-start !important;
-  margin: 0 0 0 8px !important;
+  gap: 16px !important;
+  justify-content: stretch !important;
+  margin-left: 4px !important;
   padding: 0 !important;
-  min-width: max-content;
 }
 
-.topbar > .title-cluster .nav-image {
+/* Remove only the left-hand top-bar artwork */
+.topbar > .title-cluster > .nav-image-left {
   display: none !important;
 }
 
-.topbar > .title-cluster .site-title,
-.topbar > .title-cluster .title-text,
-.topbar > .title-cluster a {
-  font-size: clamp(2rem, 3.25vw, 3.15rem) !important;
+/* Larger title immediately beside the navigation buttons */
+.topbar > .title-cluster > .site-title-mini {
+  grid-column: 1 !important;
+  font-size: clamp(1.65rem, 2.7vw, 2.65rem) !important;
   line-height: 1 !important;
   white-space: nowrap !important;
   margin: 0 !important;
+  justify-self: start !important;
 }
 
-.topbar > .topbar-art {
-  grid-column: 4;
-  min-width: 0;
-  align-self: stretch;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  overflow: visible;
-}
-
-.topbar > .topbar-art .nav-image {
-  display: block !important;
-  width: clamp(118px, 14vw, 175px) !important;
-  height: clamp(100px, 12vw, 150px) !important;
-  max-width: none !important;
+/* Centre the remaining artwork inside all space to the title's right */
+.topbar > .title-cluster > .nav-image-right {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  width: clamp(118px, 13vw, 168px) !important;
+  height: clamp(92px, 10vw, 132px) !important;
+  max-width: 100% !important;
   object-fit: contain !important;
-  object-position: center !important;
   transform: none !important;
   margin: 0 !important;
 }
 
-@media (max-width: 900px) {
-  .topbar {
-    grid-template-columns: auto auto 1fr !important;
-    grid-template-areas:
-      "home menu title"
-      "art art art" !important;
-    row-gap: 6px !important;
-    min-height: auto !important;
-    padding-top: 12px !important;
+@media (max-width: 760px) {
+  .topbar > .title-cluster {
+    flex-basis: 100% !important;
+    grid-template-columns: max-content minmax(90px, 1fr) !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    gap: 8px !important;
   }
 
-  .topbar > .home-button { grid-area: home; }
-  .topbar > .menu-wrap { grid-area: menu; }
-  .topbar > .title-cluster {
-    grid-area: title;
-    min-width: 0;
-    margin-left: 6px !important;
-  }
-  .topbar > .title-cluster .site-title,
-  .topbar > .title-cluster .title-text,
-  .topbar > .title-cluster a {
-    font-size: clamp(1.55rem, 5vw, 2.35rem) !important;
+  .topbar > .title-cluster > .site-title-mini {
+    font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
     white-space: normal !important;
   }
-  .topbar > .topbar-art {
-    grid-area: art;
-    min-height: 86px;
-  }
-  .topbar > .topbar-art .nav-image {
-    width: 120px !important;
-    height: 96px !important;
+
+  .topbar > .title-cluster > .nav-image-right {
+    width: clamp(82px, 22vw, 118px) !important;
+    height: clamp(68px, 18vw, 96px) !important;
   }
 }
 
-@media (max-width: 620px) {
-  .topbar {
-    grid-template-columns: auto auto !important;
-    grid-template-areas:
-      "home menu"
-      "title title"
-      "art art" !important;
-    justify-content: center !important;
+@media (max-width: 460px) {
+  .topbar > .title-cluster {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    text-align: center !important;
   }
 
-  .topbar > .title-cluster {
-    justify-content: center !important;
-    margin-left: 0 !important;
-    text-align: center;
+  .topbar > .title-cluster > .site-title-mini,
+  .topbar > .title-cluster > .nav-image-right {
+    grid-column: 1 !important;
+    justify-self: center !important;
   }
 }
