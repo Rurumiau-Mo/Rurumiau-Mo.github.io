@@ -2049,3 +2049,52 @@ body.site-background-page .central-panel {
     text-align: center;
   }
 }
+
+/* ==========================================
+   ABOUT ME NARROW FRAME & HOME IVY POSITION
+   2026-07-17 refinement
+========================================== */
+
+:root {
+  /* Narrower portrait-style About Me text frame. */
+  --about-border-max-width: 760px;
+  --about-border-aspect-ratio: 4 / 5;
+
+  /* Move the homepage top-left ivy roughly another 1cm left. */
+  --corner-top-left-offset-x: -86px;
+}
+
+.about-text-frame {
+  width: min(100%, var(--about-border-max-width));
+  aspect-ratio: var(--about-border-aspect-ratio);
+  min-height: 0;
+  padding: clamp(118px, 12vw, 155px) clamp(72px, 9vw, 108px);
+}
+
+.about-text-content {
+  max-width: 540px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --about-border-max-width: 680px;
+    --corner-top-left-offset-x: -58px;
+  }
+
+  .about-text-frame {
+    min-height: 680px;
+    aspect-ratio: auto;
+    padding: 112px 76px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --corner-top-left-offset-x: -34px;
+  }
+
+  .about-text-frame {
+    min-height: 520px;
+    padding: 84px 38px;
+  }
+}
