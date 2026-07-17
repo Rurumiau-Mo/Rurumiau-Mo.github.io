@@ -773,3 +773,176 @@ h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.95;margin-bottom:18px}
 @media(prefers-reduced-motion:reduce){
   .ambient-particles span,.home-page .hero-artwork{animation:none!important}
 }
+
+
+/* Real-assets layout correction */
+html, body {
+  min-height: 100%;
+}
+
+body.home-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: #071c16;
+}
+
+.home-background-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(4, 18, 14, .12), rgba(4, 18, 14, .34)),
+    url("images/home-background.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+body.home-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 18%, rgba(255,255,255,.05), transparent 38%);
+}
+
+.page-shell,
+.site-wrapper,
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.central-panel,
+.main-panel,
+.content-panel {
+  background: rgba(7, 28, 22, .68) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(9,43,31,.5), rgba(6,31,23,.26)) !important;
+}
+
+.hero-bg {
+  display: none !important;
+}
+
+.hero-artwork,
+.home-features,
+.hero img[src*="home-features"] {
+  object-fit: contain !important;
+  max-width: 100%;
+  height: auto !important;
+  animation: heroFloat 7s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.ambient-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-particles span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 214, 230, .55);
+  box-shadow: 0 0 12px rgba(243,166,198,.75);
+  animation: ambientDrift 12s ease-in-out infinite;
+}
+
+.ambient-particles span:nth-child(1){left:8%;top:72%;animation-delay:-1s}
+.ambient-particles span:nth-child(2){left:18%;top:24%;animation-delay:-6s;scale:.7}
+.ambient-particles span:nth-child(3){left:34%;top:84%;animation-delay:-3s;scale:.5}
+.ambient-particles span:nth-child(4){left:52%;top:18%;animation-delay:-8s}
+.ambient-particles span:nth-child(5){left:67%;top:68%;animation-delay:-4s;scale:.6}
+.ambient-particles span:nth-child(6){left:79%;top:31%;animation-delay:-9s;scale:.8}
+.ambient-particles span:nth-child(7){left:91%;top:78%;animation-delay:-5s;scale:.5}
+.ambient-particles span:nth-child(8){left:44%;top:48%;animation-delay:-11s;scale:.45}
+
+@keyframes ambientDrift {
+  0%,100% { opacity:.18; translate:0 18px; }
+  50% { opacity:.9; translate:12px -26px; }
+}
+
+/* Navbar correction using only existing artwork */
+.topbar,
+.navbar,
+.site-header {
+  align-items: center !important;
+}
+
+.menu-wrap,
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-button,
+.home-button,
+.nav-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+.nav-image-left,
+.nav-image-right,
+img[src*="navbar-cat"] {
+  object-fit: contain !important;
+  height: auto !important;
+  max-height: 64px;
+}
+
+/* Hide decoration placeholders whose files are not present */
+.panel-decor,
+.navbar-moss,
+.ivy-top,
+.ivy-left,
+.ivy-right,
+.moss-bottom {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .home-background-layer {
+    background-position: 58% top;
+  }
+
+  .ambient-particles span:nth-child(n+6) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-artwork,
+  .home-features,
+  .hero img[src*="home-features"],
+  .ambient-particles span {
+    animation: none !important;
+  }
+}
