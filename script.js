@@ -1,24 +1,31 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector(".menu-button");
+  const dropdown = document.querySelector(".dropdown");
 
-const menuWrap = document.querySelector(".pages-menu");
-const menuButton = document.querySelector(".pages-control");
+  if (button && dropdown) {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      dropdown.classList.toggle("open");
+      button.setAttribute("aria-expanded", dropdown.classList.contains("open"));
+    });
 
-if (menuWrap && menuButton) {
-  const closeMenu = () => {
-    menuWrap.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-  };
+    document.addEventListener("click", () => {
+      dropdown.classList.remove("open");
+      button.setAttribute("aria-expanded", "false");
+    });
 
-  menuButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    const open = menuWrap.classList.toggle("open");
-    menuButton.setAttribute("aria-expanded", String(open));
+    dropdown.addEventListener("click", (event) => event.stopPropagation());
+  }
+
+  document.querySelectorAll(".decorated").forEach((el) => {
+    const layer = document.createElement("span");
+    layer.className = "panel-decor";
+    layer.setAttribute("aria-hidden", "true");
+    ["ivy-top","ivy-left","ivy-right","moss-bottom"].forEach((cls) => {
+      const part = document.createElement("span");
+      part.className = cls;
+      layer.appendChild(part);
+    });
+    el.appendChild(layer);
   });
-
-  document.addEventListener("click", closeMenu);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-      menuButton.focus();
-    }
-  });
-}
+});
