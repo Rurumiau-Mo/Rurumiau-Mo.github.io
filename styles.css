@@ -1892,19 +1892,71 @@ body.site-background-page .central-panel {
 :root {
   /* Top corners: 1 cm higher; top-left also shifted clearly to the right. */
   --corner-top-offset-y: -78px;
-  --corner-top-left-offset-x: -10px;
+  --corner-top-left-offset-x: -22px;
 }
 
 @media (max-width: 900px) {
   :root {
     --corner-top-offset-y: -66px;
-    --corner-top-left-offset-x: 0px;
+    --corner-top-left-offset-x: -10px;
   }
 }
 
 @media (max-width: 620px) {
   :root {
     --corner-top-offset-y: -58px;
-    --corner-top-left-offset-x: 8px;
+    --corner-top-left-offset-x: -2px;
+  }
+}
+
+
+/* About Me top corner artwork — same vertical alignment as the homepage,
+   with independent horizontal offsets for the narrower outer panel. */
+.about-page {
+  --about-corner-left-offset-x: -42px;
+  --about-corner-right-offset-x: -42px;
+}
+
+.about-page .about-panel {
+  overflow: visible;
+}
+
+.about-page .about-panel .panel-corner-tl,
+.about-page .about-panel .panel-corner-tr {
+  top: var(--corner-top-offset-y) !important;
+  width: clamp(300px, 34vw, 430px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
+.about-page .about-panel .panel-corner-tl {
+  left: var(--about-corner-left-offset-x) !important;
+}
+
+.about-page .about-panel .panel-corner-tr {
+  right: var(--about-corner-right-offset-x) !important;
+}
+
+@media (max-width: 900px) {
+  .about-page {
+    --about-corner-left-offset-x: -28px;
+    --about-corner-right-offset-x: -28px;
+  }
+
+  .about-page .about-panel .panel-corner-tl,
+  .about-page .about-panel .panel-corner-tr {
+    width: clamp(230px, 42vw, 340px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-page {
+    --about-corner-left-offset-x: -18px;
+    --about-corner-right-offset-x: -18px;
+  }
+
+  .about-page .about-panel .panel-corner-tl,
+  .about-page .about-panel .panel-corner-tr {
+    width: clamp(190px, 50vw, 280px) !important;
   }
 }
