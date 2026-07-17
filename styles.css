@@ -1376,3 +1376,188 @@ body.site-background-page .central-panel {
   .home-page .home-feature-panel .panel-corner-bl { bottom: -10px !important; left: -10px !important; }
   .home-page .home-feature-panel .panel-corner-br { right: -10px !important; bottom: -10px !important; }
 }
+
+/* 2026-07-17 structural alignment cleanup */
+/* Vertically centre the title within the complete top-bar panel. */
+.topbar {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.topbar > .title-cluster {
+  align-self: stretch !important;
+  display: grid !important;
+  align-items: center !important;
+  min-height: 100% !important;
+  height: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.topbar > .title-cluster > .site-title-mini {
+  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  /* Small optical correction for the decorative font's low baseline. */
+  transform: translateY(-4px) !important;
+}
+
+@media (max-width: 900px) {
+  .topbar > .title-cluster > .site-title-mini {
+    transform: translateY(-3px) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar > .title-cluster > .site-title-mini {
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* One shared stacking frame for all three homepage feature PNGs. */
+.home-page .hero-visual {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: 1fr !important;
+  place-items: end center !important;
+  position: relative !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.home-page .hero-visual > .hero-artwork {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: end !important;
+  justify-self: center !important;
+  position: relative !important;
+  inset: auto !important;
+  width: 145% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 -6% 0 0 !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+}
+
+.home-page .hero-visual > .hero-artwork-base { z-index: 1 !important; }
+.home-page .hero-visual > .hero-artwork-topper-1 { z-index: 2 !important; }
+.home-page .hero-visual > .hero-artwork-topper-2 { z-index: 3 !important; }
+
+@media (max-width: 900px) {
+  .home-page .hero-visual > .hero-artwork {
+    width: 128% !important;
+    margin-right: -2% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .hero-visual > .hero-artwork {
+    width: 110% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Keep all four border PNGs static, visible and above the complete hero panel. */
+.page-shell,
+.central-panel,
+.home-page .home-feature-panel {
+  overflow: visible !important;
+}
+
+.home-page .home-feature-panel .panel-corner {
+  z-index: 999 !important;
+  animation: none !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tl,
+.home-page .home-feature-panel .panel-corner-tr {
+  top: 0 !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tl { left: 0 !important; }
+.home-page .home-feature-panel .panel-corner-tr { right: 0 !important; }
+
+/* 2026-07-17 final homepage artwork and corner composition */
+/* Shift the complete three-image feature stack left as one aligned unit. */
+.home-page .home-feature-panel .hero-visual {
+  left: -40px !important;
+}
+
+/* Keep every decorative corner static and above all panel content. */
+.home-page .home-feature-panel .panel-corner {
+  z-index: 9999 !important;
+  animation: none !important;
+  transform: none !important;
+  pointer-events: none !important;
+  background-size: contain !important;
+}
+
+/* Large upper ivy corners. */
+.home-page .home-feature-panel .panel-corner-tl,
+.home-page .home-feature-panel .panel-corner-tr {
+  width: clamp(280px, 30vw, 350px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  top: -35px !important;
+}
+.home-page .home-feature-panel .panel-corner-tl { left: -35px !important; }
+.home-page .home-feature-panel .panel-corner-tr { right: -35px !important; }
+
+/* Smaller lower decorations sitting down and outside the rounded corners. */
+.home-page .home-feature-panel .panel-corner-bl,
+.home-page .home-feature-panel .panel-corner-br {
+  width: clamp(210px, 23vw, 260px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  bottom: -55px !important;
+}
+.home-page .home-feature-panel .panel-corner-bl { left: -45px !important; }
+.home-page .home-feature-panel .panel-corner-br { right: -45px !important; }
+
+@media (max-width: 900px) {
+  .home-page .home-feature-panel .hero-visual { left: -24px !important; }
+
+  .home-page .home-feature-panel .panel-corner-tl,
+  .home-page .home-feature-panel .panel-corner-tr {
+    width: clamp(225px, 34vw, 300px) !important;
+    top: -28px !important;
+  }
+  .home-page .home-feature-panel .panel-corner-tl { left: -28px !important; }
+  .home-page .home-feature-panel .panel-corner-tr { right: -28px !important; }
+
+  .home-page .home-feature-panel .panel-corner-bl,
+  .home-page .home-feature-panel .panel-corner-br {
+    width: clamp(180px, 27vw, 230px) !important;
+    bottom: -42px !important;
+  }
+  .home-page .home-feature-panel .panel-corner-bl { left: -32px !important; }
+  .home-page .home-feature-panel .panel-corner-br { right: -32px !important; }
+}
+
+@media (max-width: 620px) {
+  .home-page .home-feature-panel .hero-visual { left: -10px !important; }
+
+  .home-page .home-feature-panel .panel-corner-tl,
+  .home-page .home-feature-panel .panel-corner-tr {
+    width: clamp(170px, 48vw, 225px) !important;
+    top: -18px !important;
+  }
+  .home-page .home-feature-panel .panel-corner-tl { left: -18px !important; }
+  .home-page .home-feature-panel .panel-corner-tr { right: -18px !important; }
+
+  .home-page .home-feature-panel .panel-corner-bl,
+  .home-page .home-feature-panel .panel-corner-br {
+    width: clamp(145px, 38vw, 190px) !important;
+    bottom: -28px !important;
+  }
+  .home-page .home-feature-panel .panel-corner-bl { left: -20px !important; }
+  .home-page .home-feature-panel .panel-corner-br { right: -20px !important; }
+}
