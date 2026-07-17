@@ -1173,3 +1173,155 @@ body.site-background-page .central-panel {
     animation: none !important;
   }
 }
+
+
+/* Reusable decorative PNG corners for the homepage feature panel.
+   Add transparent 220 x 220 px PNGs at:
+   images/panel-corner-tl.png
+   images/panel-corner-tr.png
+   images/panel-corner-bl.png
+   images/panel-corner-br.png */
+.home-feature-panel {
+  overflow: visible;
+}
+
+.home-feature-panel .hero-overlay {
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.home-feature-panel .hero-copy,
+.home-feature-panel .hero-visual {
+  z-index: 4;
+}
+
+.panel-corner {
+  position: absolute;
+  z-index: 3;
+  width: clamp(150px, 19vw, 220px);
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+  animation: panelCornerFloat 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.panel-corner-tl {
+  top: -58px;
+  left: -58px;
+  background-image: url("images/panel-corner-tl.png");
+  animation-delay: -0.8s;
+}
+
+.panel-corner-tr {
+  top: -58px;
+  right: -58px;
+  background-image: url("images/panel-corner-tr.png");
+  animation-delay: -2.2s;
+}
+
+.panel-corner-bl {
+  bottom: -58px;
+  left: -58px;
+  background-image: url("images/panel-corner-bl.png");
+  animation-delay: -3.7s;
+}
+
+.panel-corner-br {
+  right: -58px;
+  bottom: -58px;
+  background-image: url("images/panel-corner-br.png");
+  animation-delay: -5.1s;
+}
+
+@keyframes panelCornerFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.35deg); }
+  50% { transform: translate3d(0, -8px, 0) rotate(0.35deg); }
+}
+
+@media (max-width: 900px) {
+  .panel-corner {
+    width: clamp(125px, 24vw, 185px);
+  }
+
+  .panel-corner-tl { top: -42px; left: -42px; }
+  .panel-corner-tr { top: -42px; right: -42px; }
+  .panel-corner-bl { bottom: -42px; left: -42px; }
+  .panel-corner-br { right: -42px; bottom: -42px; }
+}
+
+@media (max-width: 620px) {
+  .panel-corner {
+    width: 125px;
+  }
+
+  .panel-corner-tl { top: -28px; left: -28px; }
+  .panel-corner-tr { top: -28px; right: -28px; }
+  .panel-corner-bl { bottom: -28px; left: -28px; }
+  .panel-corner-br { right: -28px; bottom: -28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-corner {
+    animation: none !important;
+  }
+}
+
+/* Final homepage layer alignment fix: all three PNGs share the exact same grid box. */
+.home-page .hero-visual {
+  display: grid !important;
+  place-items: end center !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+.home-page .hero-visual .hero-artwork {
+  grid-area: 1 / 1 !important;
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  width: 145% !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 -6% 0 0 !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  transform-origin: center bottom !important;
+}
+
+.home-page .hero-visual .hero-artwork-base { z-index: 1 !important; animation-delay: 0s !important; }
+.home-page .hero-visual .hero-artwork-topper-1 { z-index: 2 !important; animation-delay: -2.33s !important; }
+.home-page .hero-visual .hero-artwork-topper-2 { z-index: 3 !important; animation-delay: -4.66s !important; }
+
+@media (max-width: 900px) {
+  .home-page .hero-visual .hero-artwork {
+    width: 128% !important;
+    margin-right: -2% !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .hero-visual .hero-artwork {
+    width: 110% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Slightly smaller title, retaining the current header layout. */
+.topbar > .title-cluster > .site-title-mini {
+  font-size: clamp(2.1rem, 3.5vw, 3.65rem) !important;
+}
+
+@media (max-width: 900px) {
+  .topbar > .title-cluster > .site-title-mini {
+    font-size: clamp(1.65rem, 4.6vw, 2.55rem) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar > .title-cluster > .site-title-mini {
+    font-size: clamp(1.35rem, 6.2vw, 1.9rem) !important;
+  }
+}
