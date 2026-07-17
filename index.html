@@ -1,49 +1,88 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ruru's Grimoire</title>
-<link rel="icon" type="image/png" sizes="64x64" href="./images/favicon.png?v=2">
-<link rel="shortcut icon" type="image/png" href="./images/favicon.png?v=2">
-<link rel="apple-touch-icon" href="./images/favicon.png?v=2">
-<link rel="stylesheet" href="styles.css">
-<script defer src="script.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f32">
+  <title>Home · Ruru's Grimoire</title>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
-<body class="site-page home-page">
-<div class="site-background-layer" aria-hidden="true"></div>
-<div class="home-background-layer" aria-hidden="true"></div>
-<div class="ambient-particles" aria-hidden="true">
-<span></span><span></span><span></span><span></span>
-<span></span><span></span><span></span><span></span>
-</div><main class="page-shell"><div class="central-panel"><header class="topbar">
-<div class="menu-wrap">
-<button class="menu-button" aria-expanded="false" aria-label="Open page menu">☰ <span>Pages</span></button>
-<nav class="dropdown" aria-label="Page menu"><a href="blog.html">Blog</a><a href="projects.html">Projects</a></nav>
+<body class="home-page">
+  
+<div class="site-background" aria-hidden="true"></div>
+<div class="ambient-magic" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
 </div>
-<div class="title-cluster">
-<img class="nav-image nav-image-left" src="images/navbar-cat-left.png" alt="">
-<div class="site-title-mini">Ruru's Grimoire</div>
-<img class="nav-image nav-image-right" src="images/navbar-cat.png" alt="">
-</div>
-<a class="home-button" href="index.html" aria-label="Home">⌂ <span>Home</span></a>
-<span class="navbar-moss" aria-hidden="true"></span>
+
+  <div class="site-frame">
+    
+<header class="site-header">
+  <div class="header-nav">
+    <a class="nav-control home-control" href="index.html">Home</a>
+    <div class="pages-menu">
+      <button class="nav-control pages-control" type="button" aria-expanded="false" aria-controls="site-menu">
+        Pages
+        <span class="menu-chevron" aria-hidden="true">⌄</span>
+      </button>
+      <nav class="site-menu" id="site-menu" aria-label="Pages">
+        <a href="blog.html">Blog</a>
+        <a href="projects.html">Projects</a>
+        <a href="talk-to-me.html">Talk To Me</a>
+        <a href="talk-to-me-updates.html">Talk To Me Updates</a>
+      </nav>
+    </div>
+  </div>
+
+  <a class="header-brand" href="index.html" aria-label="Ruru's Grimoire home">
+    <img src="images/navbar-cat-left.png" class="header-cat header-cat-left" alt="">
+    <span>Ruru's Grimoire</span>
+    <img src="images/navbar-cat.png" class="header-cat header-cat-right" alt="">
+  </a>
+
+  <div class="header-balance" aria-hidden="true"></div>
 </header>
-<section class="hero decorated">
-<span class="hero-overlay" aria-hidden="true"></span>
-<div class="hero-copy">
-<div class="eyebrow">A forest of spells, stories and projects</div>
-<h1>Ruru's Grimoire</h1>
-<p>Welcome to a cosy witchy corner filled with creative work, game-development notes and ideas growing beneath the canopy.</p>
-<div class="hero-actions">
-<a class="button" href="blog.html">Read the Blog</a>
-<a class="button secondary" href="projects.html">View Projects</a>
-</div>
-</div>
-<div class="hero-visual"><img class="hero-artwork" src="images/home-features.png" alt="Featured artwork"></div>
+
+    <main class="glass-shell">
+      
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">A forest of spells, stories and projects</p>
+    <h1>Welcome to Ruru's Grimoire</h1>
+    <p class="lead">A cosy witchy corner filled with creative work, game-development notes and ideas growing beneath the canopy.</p>
+    <div class="button-row">
+      <a class="magic-button" href="blog.html">Read the Blog</a>
+      <a class="magic-button secondary" href="projects.html">View Projects</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <img src="images/home-features.png" alt="A large orange Maine Coon">
+  </div>
 </section>
-<section class="section">
-<div class="section-heading"><h2>Open the grimoire</h2><p>Choose a path through the forest.</p></div>
-<div class="card-grid">
-<a class="card decorated" href="blog.html"><h3>Blog</h3><p>Notes, updates and creative experiments.</p></a>
-<a class="card decorated" href="projects.html"><h3>Projects</h3><p>Games, tools and magical technical work.</p></a>
-</div>
-</section><footer class="footer"><p>Made beneath mossy branches, under the sun and moon.</p></footer></div></main></body></html>
+
+<section class="content-section">
+  <div class="section-heading">
+    <p class="eyebrow">Choose a path</p>
+    <h2>Open the grimoire</h2>
+  </div>
+  <div class="card-grid">
+    <a class="story-card" href="blog.html">
+      <span class="card-kicker">Field Notes</span>
+      <h3>Blog</h3>
+      <p>Notes, updates and creative experiments from beneath the canopy.</p>
+    </a>
+    <a class="story-card" href="projects.html">
+      <span class="card-kicker">The Workshop</span>
+      <h3>Projects</h3>
+      <p>Games, modules, tools and magical technical work.</p>
+    </a>
+  </div>
+</section>
+
+    </main>
+    <footer class="site-footer">Made beneath mossy branches, under the sun and moon.</footer>
+  </div>
+</body>
+</html>
