@@ -883,3 +883,70 @@ body.site-background-page .central-panel {
     order: 3;
   }
 }
+
+
+/* Balanced top bar: centre the title and images within the space after the nav */
+.topbar > .title-cluster {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  justify-content: center !important;
+  margin-left: 0 !important;
+  padding-left: clamp(12px, 2vw, 28px) !important;
+  padding-right: 0 !important;
+}
+
+/* Homepage Blog/Projects artwork spaces.
+   Add transparent PNGs as images/blog.png and images/projects.png. */
+.homepage-path-card {
+  display: grid !important;
+  grid-template-columns: minmax(120px, 40%) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(18px, 3vw, 34px) !important;
+  min-height: 220px !important;
+  overflow: hidden !important;
+}
+
+.homepage-card-image {
+  display: block;
+  width: 100%;
+  min-height: 170px;
+  align-self: stretch;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.blog-card-image {
+  background-image: url("images/blog.png");
+}
+
+.projects-card-image {
+  background-image: url("images/projects.png");
+}
+
+.homepage-card-copy {
+  min-width: 0;
+}
+
+.homepage-card-copy h3,
+.homepage-card-copy p {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .topbar > .title-cluster {
+    flex: 1 0 100% !important;
+    padding-left: 0 !important;
+  }
+
+  .homepage-path-card {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .homepage-card-image {
+    min-height: 145px;
+  }
+}
