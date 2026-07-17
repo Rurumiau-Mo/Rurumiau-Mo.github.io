@@ -2077,3 +2077,53 @@ body:not(.about-page) .panel-decor .moss-bottom {
     --about-moss-floor-width: 324%;
   }
 }
+
+/* July 2026: final homepage and About Me decorative alignment refinements. */
+
+/* Let the homepage top artwork participate in the page-level stacking order,
+   then move the left corner 1 cm down and right from its previous position. */
+.home-page .home-feature-panel {
+  isolation: auto !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tl {
+  left: calc(var(--corner-top-left-offset-x) - 0.5cm) !important;
+  top: calc(var(--corner-top-offset-y) + 1cm) !important;
+}
+
+/* The top-right corner intentionally overlaps the navigation bar. */
+.home-page .home-feature-panel .panel-corner-tr {
+  z-index: 1101 !important;
+}
+
+/* Shift both About Me top borders 1 cm to the left while retaining their Y positions. */
+.about-page .about-panel .panel-corner-tl {
+  left: calc(var(--about-corner-left-offset-x) - 1cm) !important;
+}
+
+.about-page .about-panel .panel-corner-tr {
+  right: calc(var(--about-corner-right-offset-x) + 1cm) !important;
+}
+
+/* Slightly enlarge the moss floor and centre its true midpoint on the About Me panel. */
+.about-page {
+  --about-moss-floor-width: min(360%, 3340px);
+}
+
+.about-page .about-moss-floor {
+  left: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 760px) {
+  .about-page {
+    --about-moss-floor-width: 352%;
+  }
+}
+
+@media (max-width: 460px) {
+  .about-page {
+    --about-moss-floor-width: 344%;
+  }
+}
