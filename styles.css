@@ -2168,3 +2168,80 @@ body.site-background-page .central-panel {
     background-size: 100% 100%, cover;
   }
 }
+
+
+/* ==========================================
+   ABOUT ME — CLEAN PROFILE LAYOUT
+   2026-07-17
+========================================== */
+
+:root {
+  --about-profile-size: clamp(220px, 25vw, 320px);
+}
+
+/* Remove the illustrated full-panel frame and return to a soft glass card. */
+.about-page .about-panel {
+  width: min(100%, 980px);
+  min-height: 0;
+  margin-inline: auto;
+  padding: clamp(48px, 7vw, 86px) clamp(34px, 7vw, 82px);
+  gap: clamp(24px, 4vw, 42px);
+  background-image: linear-gradient(rgba(9,43,31,.86), rgba(6,31,23,.92));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Dedicated profile artwork slot: add images/profile.png. */
+.about-profile-image {
+  position: relative;
+  width: var(--about-profile-size);
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: rgba(234, 174, 202, .10);
+  background-image: url("images/profile.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 2px solid rgba(241, 185, 211, .35);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, .28);
+}
+
+/* A subtle guide remains visible until profile.png is added. */
+.about-profile-image::after {
+  content: "Profile image";
+  position: absolute;
+  inset: auto 14px 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.72);
+  background: rgba(5, 30, 22, .68);
+  font-size: .82rem;
+  letter-spacing: .04em;
+  pointer-events: none;
+}
+
+.about-page .about-text-frame {
+  width: 100%;
+  max-width: 720px;
+  min-height: 0;
+  aspect-ratio: auto;
+  padding: 0;
+  background: none;
+}
+
+.about-page .about-text-content {
+  max-width: 720px;
+}
+
+@media (max-width: 620px) {
+  .about-page .about-panel {
+    padding: 42px 26px 52px;
+  }
+
+  .about-profile-image {
+    border-radius: 24px;
+  }
+}
