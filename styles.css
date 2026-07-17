@@ -1932,3 +1932,120 @@ body.site-background-page .central-panel {
     width:clamp(220px,64vw,var(--corner-top-size)) !important;
   }
 }
+
+
+/* ==========================================
+   ABOUT ME PAGE & NAVBAR BRAND POSITION
+========================================== */
+
+:root {
+  --navbar-brand-shift-x: 1.5cm;
+  --about-portrait-size: clamp(220px, 32vw, 390px);
+  --about-border-max-width: 980px;
+  --about-border-aspect-ratio: 7 / 5;
+}
+
+/* Move the complete title-and-image brand group right as one unit. */
+.topbar > .title-cluster {
+  transform: translateX(var(--navbar-brand-shift-x)) !important;
+}
+
+/* The third homepage link sits below the original two cards. */
+.about-home-card {
+  grid-column: 1 / -1;
+  width: calc(50% - 9px);
+  justify-self: center;
+}
+
+.about-card-image {
+  background-image: url("images/about.png");
+}
+
+.about-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(22px, 4vw, 42px);
+  text-align: center;
+}
+
+.about-heading h1 {
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  margin: 6px 0 0;
+}
+
+/* Add the transparent central portrait as images/about-me.png. */
+.about-portrait-space {
+  width: var(--about-portrait-size);
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+  background-image: url("images/about-me.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Add the complete transparent text-box border as images/about-border.png. */
+.about-text-frame {
+  position: relative;
+  width: min(100%, var(--about-border-max-width));
+  min-height: clamp(520px, 63vw, 700px);
+  display: grid;
+  place-items: center;
+  padding: clamp(100px, 12vw, 155px) clamp(70px, 10vw, 135px);
+  background-image: url("images/about-border.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.about-text-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  text-align: left;
+}
+
+.about-text-content h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.about-text-content p {
+  color: #dce5d6;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --navbar-brand-shift-x: 0.75cm;
+  }
+
+  .about-home-card {
+    width: 100%;
+  }
+
+  .about-text-frame {
+    min-height: 560px;
+    padding: 100px 74px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --navbar-brand-shift-x: 0cm;
+  }
+
+  .topbar > .title-cluster {
+    transform: none !important;
+  }
+
+  .about-text-frame {
+    min-height: 500px;
+    padding: 82px 38px;
+    background-size: 100% 100%;
+  }
+
+  .about-text-content {
+    text-align: center;
+  }
+}
