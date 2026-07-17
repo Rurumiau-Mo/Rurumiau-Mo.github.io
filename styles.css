@@ -2127,3 +2127,74 @@ body:not(.about-page) .panel-decor .moss-bottom {
     --about-moss-floor-width: 344%;
   }
 }
+
+
+/* July 2026: corrected moss centring and final corner placement. */
+
+/* The homepage top-right decoration is a direct child of the central panel so
+   it can genuinely render above the navigation bar. */
+.home-page .central-panel > .home-top-corner-tr {
+  position: absolute !important;
+  display: block !important;
+  top: 16px !important;
+  right: var(--corner-top-right-offset-x) !important;
+  width: clamp(380px, 42vw, var(--corner-top-size)) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  z-index: 3000 !important;
+  background-image: url("images/panel-corner-tr.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  animation: none !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+/* Nudge both About Me top borders a few pixels right from their last position. */
+.about-page .about-panel .panel-corner-tl {
+  left: calc(var(--about-corner-left-offset-x) - 1cm + 8px) !important;
+}
+
+.about-page .about-panel .panel-corner-tr {
+  right: calc(var(--about-corner-right-offset-x) + 1cm - 8px) !important;
+}
+
+/* Re-centre the oversized moss floor from the panel's midpoint. */
+.about-page .about-moss-floor {
+  position: relative !important;
+  left: 50% !important;
+  margin-left: 0 !important;
+  transform: translateX(-50%) !important;
+  width: var(--about-moss-floor-width) !important;
+  background-position: center bottom !important;
+}
+
+/* Slightly reduce the homepage bottom-right corner and move it left/down. */
+.home-page .home-feature-panel .panel-corner-br {
+  width: calc(var(--corner-bottom-size) * 0.9) !important;
+  right: calc(var(--corner-bottom-right-offset-x) + 10px) !important;
+  bottom: calc(var(--corner-bottom-right-offset-y) - 8px) !important;
+}
+
+@media (max-width: 900px) {
+  .home-page .central-panel > .home-top-corner-tr {
+    top: 18px !important;
+    width: clamp(300px, 48vw, 420px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .central-panel > .home-top-corner-tr {
+    top: 22px !important;
+    width: clamp(230px, 58vw, 330px) !important;
+  }
+
+  .about-page .about-panel .panel-corner-tl {
+    left: calc(var(--about-corner-left-offset-x) - 1cm + 5px) !important;
+  }
+
+  .about-page .about-panel .panel-corner-tr {
+    right: calc(var(--about-corner-right-offset-x) + 1cm - 5px) !important;
+  }
+}
