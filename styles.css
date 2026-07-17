@@ -1092,3 +1092,21 @@ body.site-background-page .central-panel {
     height: clamp(62px, 19vw, 90px) !important;
   }
 }
+
+/* Final title fit adjustment: slightly smaller while preserving the working header */
+.topbar > .title-cluster > .site-title-mini {
+  font-size: clamp(2.4rem, 4vw, 4.15rem) !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 900px) {
+  .topbar > .title-cluster > .site-title-mini {
+    font-size: clamp(1.85rem, 5.2vw, 2.9rem) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar > .title-cluster > .site-title-mini {
+    font-size: clamp(1.5rem, 7vw, 2.15rem) !important;
+  }
+}
