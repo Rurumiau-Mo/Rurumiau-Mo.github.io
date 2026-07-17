@@ -1325,3 +1325,54 @@ body.site-background-page .central-panel {
     font-size: clamp(1.35rem, 6.2vw, 1.9rem) !important;
   }
 }
+
+/* Panel border visibility fix: static decorations above every panel element. */
+.home-page .home-feature-panel {
+  position: relative !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+}
+
+.home-page .home-feature-panel .panel-corner {
+  z-index: 100 !important;
+  animation: none !important;
+  transform: none !important;
+  will-change: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Keep the upper decorations mostly inside the panel so no ancestor can crop them. */
+.home-page .home-feature-panel .panel-corner-tl {
+  top: -18px !important;
+  left: -18px !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tr {
+  top: -18px !important;
+  right: -18px !important;
+}
+
+.home-page .home-feature-panel .panel-corner-bl {
+  bottom: -18px !important;
+  left: -18px !important;
+}
+
+.home-page .home-feature-panel .panel-corner-br {
+  right: -18px !important;
+  bottom: -18px !important;
+}
+
+.home-page .home-feature-panel .hero-overlay,
+.home-page .home-feature-panel .hero-copy,
+.home-page .home-feature-panel .hero-visual {
+  z-index: 2 !important;
+}
+
+@media (max-width: 620px) {
+  .home-page .home-feature-panel .panel-corner-tl { top: -10px !important; left: -10px !important; }
+  .home-page .home-feature-panel .panel-corner-tr { top: -10px !important; right: -10px !important; }
+  .home-page .home-feature-panel .panel-corner-bl { bottom: -10px !important; left: -10px !important; }
+  .home-page .home-feature-panel .panel-corner-br { right: -10px !important; bottom: -10px !important; }
+}
