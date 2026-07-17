@@ -2032,3 +2032,48 @@ body.site-background-page .central-panel {
   transform: none !important;
   will-change: auto !important;
 }
+
+/* July 2026: enlarged About Me moss floor and decorative artwork layering. */
+.about-page {
+  --about-moss-floor-height: clamp(270px, 39vw, 495px);
+  --about-moss-floor-width: min(336%, 3120px);
+}
+
+.about-page .about-moss-floor {
+  position: relative;
+  left: 50%;
+  z-index: 6;
+  margin-top: calc(clamp(4px, 1vw, 12px) + 1.5cm);
+  margin-bottom: calc(clamp(144px, 21vw, 258px) * -1);
+  transform: translateX(-50%);
+}
+
+/* Outside About Me, all corner artwork sits over page content.
+   Bottom corner/border artwork remains the highest decorative layer. */
+body:not(.about-page) .panel-corner {
+  z-index: 30 !important;
+}
+
+body:not(.about-page) .panel-corner-bl,
+body:not(.about-page) .panel-corner-br,
+body:not(.about-page) .panel-decor .moss-bottom {
+  z-index: 31 !important;
+}
+
+@media (max-width: 760px) {
+  .about-page {
+    --about-moss-floor-height: clamp(216px, 60vw, 375px);
+    --about-moss-floor-width: 330%;
+  }
+
+  .about-page .about-moss-floor {
+    margin-bottom: calc(clamp(126px, 21vw, 204px) * -1);
+  }
+}
+
+@media (max-width: 460px) {
+  .about-page {
+    --about-moss-floor-height: clamp(186px, 75vw, 315px);
+    --about-moss-floor-width: 324%;
+  }
+}
