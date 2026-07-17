@@ -1664,3 +1664,56 @@ body.site-background-page .central-panel {
     width: clamp(190px, 54vw, 250px) !important;
   }
 }
+
+/* 2026-07-17 restore navbar artwork space and rebalance homepage corners. */
+/* Shift only the title slightly left so the right-hand top-bar image remains visible. */
+.topbar > .title-cluster > .site-title-mini {
+  left: 44% !important;
+}
+
+/* Increase the upper ivy artwork again. */
+.home-page .home-feature-panel .panel-corner-tl,
+.home-page .home-feature-panel .panel-corner-tr {
+  width: clamp(350px, 38vw, 460px) !important;
+}
+
+/* Undo the previous half-image translation on the lower-left decoration. */
+.home-page .home-feature-panel .panel-corner-bl {
+  left: -65px !important;
+  bottom: -70px !important;
+  transform: none !important;
+}
+
+@media (max-width: 900px) {
+  .topbar > .title-cluster > .site-title-mini {
+    left: 45% !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-tl,
+  .home-page .home-feature-panel .panel-corner-tr {
+    width: clamp(285px, 42vw, 390px) !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-bl {
+    left: -48px !important;
+    bottom: -52px !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar > .title-cluster > .site-title-mini {
+    left: auto !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-tl,
+  .home-page .home-feature-panel .panel-corner-tr {
+    width: clamp(215px, 60vw, 285px) !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-bl {
+    left: -30px !important;
+    bottom: -34px !important;
+    transform: none !important;
+  }
+}
