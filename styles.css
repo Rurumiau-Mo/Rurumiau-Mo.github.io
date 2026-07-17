@@ -1420,7 +1420,7 @@ body.site-background-page .central-panel {
 
 .home-page .home-feature-panel .panel-corner-tr {
   right: var(--corner-top-right-offset-x) !important;
-  top: var(--corner-top-offset-y) !important;
+  top: var(--about-corner-top-offset-y) !important;
 }
 
 .home-page .home-feature-panel .panel-corner-bl, .home-page .home-feature-panel .panel-corner-br {
@@ -1892,20 +1892,20 @@ body.site-background-page .central-panel {
 :root {
   /* Top corners: 1 cm higher; top-left also shifted clearly to the right. */
   --corner-top-offset-y: -78px;
-  --corner-top-left-offset-x: -22px;
+  --corner-top-left-offset-x: -37px;
 }
 
 @media (max-width: 900px) {
   :root {
     --corner-top-offset-y: -66px;
-    --corner-top-left-offset-x: -10px;
+    --corner-top-left-offset-x: -22px;
   }
 }
 
 @media (max-width: 620px) {
   :root {
     --corner-top-offset-y: -58px;
-    --corner-top-left-offset-x: -2px;
+    --corner-top-left-offset-x: -14px;
   }
 }
 
@@ -1915,6 +1915,7 @@ body.site-background-page .central-panel {
 .about-page {
   --about-corner-left-offset-x: -42px;
   --about-corner-right-offset-x: -42px;
+  --about-corner-top-offset-y: -40px;
 }
 
 .about-page .about-panel {
@@ -1923,7 +1924,7 @@ body.site-background-page .central-panel {
 
 .about-page .about-panel .panel-corner-tl,
 .about-page .about-panel .panel-corner-tr {
-  top: var(--corner-top-offset-y) !important;
+  top: var(--about-corner-top-offset-y) !important;
   width: clamp(300px, 34vw, 430px) !important;
   height: auto !important;
   aspect-ratio: 1 / 1 !important;
@@ -1941,6 +1942,7 @@ body.site-background-page .central-panel {
   .about-page {
     --about-corner-left-offset-x: -28px;
     --about-corner-right-offset-x: -28px;
+    --about-corner-top-offset-y: -28px;
   }
 
   .about-page .about-panel .panel-corner-tl,
@@ -1953,6 +1955,7 @@ body.site-background-page .central-panel {
   .about-page {
     --about-corner-left-offset-x: -18px;
     --about-corner-right-offset-x: -18px;
+    --about-corner-top-offset-y: -20px;
   }
 
   .about-page .about-panel .panel-corner-tl,
