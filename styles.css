@@ -2268,3 +2268,62 @@ body:not(.about-page) .panel-decor .moss-bottom {
     --about-top-right-extra-x: -12px;
   }
 }
+
+/* July 2026: double the displayed About Me moss artwork while retaining its
+   profile-centred anchor, and lift the homepage top-left decoration slightly. */
+:root {
+  --about-moss-display-scale: 2;
+  --home-top-left-adjust-y: -8px;
+}
+
+.about-page .about-moss-anchor .about-moss-floor {
+  transform: translateX(-50%) scale(var(--about-moss-display-scale)) !important;
+  transform-origin: center bottom !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --home-top-left-adjust-y: -7px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --home-top-left-adjust-y: -5px;
+  }
+}
+
+
+/* July 2026: finished About Me introduction and illuminated welcome title. */
+.about-page .about-heading {
+  margin-bottom: clamp(8px, 1.4vw, 18px);
+}
+
+.about-page .about-heading h1 {
+  font-size: clamp(3rem, 7vw, 5.6rem);
+  line-height: 1.05;
+  letter-spacing: 0.035em;
+  color: #d8f5c8;
+  text-shadow:
+    0 0 8px rgba(184, 255, 181, 0.72),
+    0 0 20px rgba(240, 170, 209, 0.34),
+    0 3px 0 rgba(27, 67, 48, 0.5);
+}
+
+.about-page .about-text-content {
+  font-size: clamp(1rem, 1.35vw, 1.14rem);
+  line-height: 1.8;
+}
+
+.about-page .about-text-content p {
+  margin: 0 0 1.35em;
+}
+
+.about-page .about-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-page .about-text-content strong {
+  color: #f5bedc;
+  font-weight: 800;
+}
