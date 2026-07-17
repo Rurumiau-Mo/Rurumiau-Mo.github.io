@@ -1561,3 +1561,106 @@ body.site-background-page .central-panel {
   .home-page .home-feature-panel .panel-corner-bl { left: -20px !important; }
   .home-page .home-feature-panel .panel-corner-br { right: -20px !important; }
 }
+
+/* 2026-07-17 final corner recentering and independent navbar title alignment */
+/* Centre only the lettering within the space between the two navigation buttons.
+   The right-hand navbar artwork keeps its existing grid position and dimensions. */
+.topbar > .title-cluster {
+  position: relative !important;
+}
+
+.topbar > .title-cluster > .site-title-mini {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: max-content !important;
+  height: auto !important;
+  justify-self: auto !important;
+  align-self: auto !important;
+  transform: translate(-50%, -55%) !important;
+  z-index: 4 !important;
+}
+
+/* Nudge the full decorative corner composition slightly left. */
+.home-page .home-feature-panel .panel-corner-tl {
+  left: -45px !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tr {
+  right: -25px !important;
+}
+
+.home-page .home-feature-panel .panel-corner-br {
+  right: -35px !important;
+}
+
+/* Move the lower-left decoration down and left by half of its own size,
+   in addition to the small shared leftward adjustment. */
+.home-page .home-feature-panel .panel-corner-bl {
+  left: -55px !important;
+  bottom: -55px !important;
+  transform: translate(-50%, 50%) !important;
+}
+
+@media (max-width: 900px) {
+  .topbar > .title-cluster > .site-title-mini {
+    transform: translate(-50%, -54%) !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-tl { left: -38px !important; }
+  .home-page .home-feature-panel .panel-corner-tr { right: -18px !important; }
+  .home-page .home-feature-panel .panel-corner-br { right: -22px !important; }
+  .home-page .home-feature-panel .panel-corner-bl {
+    left: -42px !important;
+    bottom: -42px !important;
+    transform: translate(-50%, 50%) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar > .title-cluster > .site-title-mini {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    justify-self: center !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-tl { left: -24px !important; }
+  .home-page .home-feature-panel .panel-corner-tr { right: -12px !important; }
+  .home-page .home-feature-panel .panel-corner-br { right: -14px !important; }
+  .home-page .home-feature-panel .panel-corner-bl {
+    left: -28px !important;
+    bottom: -28px !important;
+    transform: translate(-45%, 45%) !important;
+  }
+}
+
+/* 2026-07-17 enlarge upper ivy and lower the complete framed homepage panel. */
+.home-page .home-feature-panel {
+  margin-top: 2cm !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tl,
+.home-page .home-feature-panel .panel-corner-tr {
+  width: clamp(320px, 34vw, 400px) !important;
+}
+
+@media (max-width: 900px) {
+  .home-page .home-feature-panel .panel-corner-tl,
+  .home-page .home-feature-panel .panel-corner-tr {
+    width: clamp(260px, 38vw, 340px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-page .home-feature-panel {
+    margin-top: 2cm !important;
+  }
+
+  .home-page .home-feature-panel .panel-corner-tl,
+  .home-page .home-feature-panel .panel-corner-tr {
+    width: clamp(190px, 54vw, 250px) !important;
+  }
+}
