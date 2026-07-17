@@ -1963,3 +1963,50 @@ body.site-background-page .central-panel {
     width: clamp(190px, 50vw, 280px) !important;
   }
 }
+
+/* Final navbar brand alignment and About Me moss-floor artwork slot. */
+:root {
+  --navbar-brand-shift-y: 5px;
+  --about-moss-floor-height: clamp(90px, 13vw, 165px);
+  --about-moss-floor-width: min(112%, 1040px);
+}
+
+/* Keep the existing horizontal brand shift while lowering both the title and cat image. */
+.topbar > .title-cluster {
+  transform: translate(var(--navbar-brand-shift-x), var(--navbar-brand-shift-y)) !important;
+}
+
+.about-moss-floor {
+  display: block;
+  width: var(--about-moss-floor-width);
+  height: var(--about-moss-floor-height);
+  flex: 0 0 auto;
+  margin-top: clamp(4px, 1vw, 12px);
+  margin-bottom: calc(clamp(48px, 7vw, 86px) * -1);
+  background-image: url("images/about-moss-floor.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --navbar-brand-shift-y: 4px;
+    --about-moss-floor-height: clamp(72px, 20vw, 125px);
+    --about-moss-floor-width: 110%;
+  }
+
+  .about-moss-floor {
+    margin-bottom: calc(clamp(42px, 7vw, 68px) * -1);
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --navbar-brand-shift-y: 3px;
+    --about-moss-floor-height: clamp(62px, 25vw, 105px);
+    --about-moss-floor-width: 108%;
+  }
+}
+
