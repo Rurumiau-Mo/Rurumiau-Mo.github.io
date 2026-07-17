@@ -25,7 +25,7 @@ body{
   font-family:"Nunito",sans-serif;
   background:
     linear-gradient(rgba(4,19,15,.52),rgba(4,19,15,.76)),
-    url("images/background.png") center/cover fixed no-repeat,
+    url("images/forest-background.jpg") center/cover fixed no-repeat,
     var(--deep);
   overflow-x:hidden;
 }
@@ -670,150 +670,106 @@ h1{font-size:clamp(2.8rem,7vw,5.8rem);line-height:.95;margin-bottom:18px}
 }
 
 
-/* v2.3: balanced navigation and homepage layout */
-.topbar {
-  grid-template-columns: minmax(0, 1fr) minmax(280px, auto) minmax(0, 1fr);
-  align-items: center;
-  height: auto;
-  min-height: 72px;
-  padding: 6px 14px;
+/* v2.3 independent homepage layers */
+.home-page{
+  position:relative;
+  isolation:isolate;
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(4,19,15,.28),rgba(4,19,15,.58)),
+    url("images/forest-background.jpg") center/cover fixed no-repeat,
+    var(--deep);
 }
-
-.menu-wrap {
-  justify-self: start;
-  display: flex;
-  align-items: center;
+.home-background-layer{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:url("images/home-background.png") center top/cover no-repeat;
 }
-
-.home-button {
-  justify-self: end;
+.home-background-layer::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(3,15,11,.02),rgba(3,15,11,.3));
 }
-
-.menu-button,
-.home-button {
-  min-height: 48px;
-  padding: 10px 18px;
-  transform: none;
+.home-page .page-shell{position:relative;z-index:10}
+.home-page .central-panel{
+  position:relative;
+  z-index:10;
+  background:rgba(7,28,22,.72);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
-
-.menu-button:hover,
-.home-button:hover {
-  transform: translateY(-2px);
+.home-page .hero{
+  position:relative;
+  z-index:2;
+  overflow:hidden;
+  background:linear-gradient(135deg,rgba(9,43,31,.58),rgba(6,31,23,.38))!important;
 }
-
-.menu-button:active,
-.home-button:active {
-  transform: translateY(1px);
+.hero-bg{display:none!important}
+.home-page .hero-overlay{
+  background:linear-gradient(90deg,rgba(5,24,18,.5),rgba(5,24,18,.18) 55%,rgba(5,24,18,.03))!important;
 }
-
-.title-cluster {
-  justify-self: center;
-  width: max-content;
-  height: 64px;
-  grid-template-columns: 58px auto 76px;
-  align-items: center;
-  gap: 7px;
+.ambient-particles{
+  position:fixed;
+  inset:0;
+  z-index:4;
+  overflow:hidden;
+  pointer-events:none;
 }
-
-.nav-image-left,
-.nav-image-right {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.ambient-particles span{
+  position:absolute;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:rgba(255,214,230,.56);
+  box-shadow:0 0 12px rgba(243,166,198,.75),0 0 24px rgba(199,216,174,.38);
+  animation:ambientDrift 11s ease-in-out infinite;
 }
-
-.site-title-mini {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  margin: 0;
-  line-height: 1.05;
+.ambient-particles span:nth-child(1){left:8%;top:72%;animation-delay:-1s}
+.ambient-particles span:nth-child(2){left:18%;top:24%;animation-delay:-6s;scale:.7}
+.ambient-particles span:nth-child(3){left:34%;top:84%;animation-delay:-3s;scale:.5}
+.ambient-particles span:nth-child(4){left:52%;top:18%;animation-delay:-8s}
+.ambient-particles span:nth-child(5){left:67%;top:68%;animation-delay:-4s;scale:.6}
+.ambient-particles span:nth-child(6){left:79%;top:31%;animation-delay:-9s;scale:.8}
+.ambient-particles span:nth-child(7){left:91%;top:78%;animation-delay:-5s;scale:.5}
+.ambient-particles span:nth-child(8){left:44%;top:48%;animation-delay:-11s;scale:.45}
+@keyframes ambientDrift{
+  0%,100%{opacity:.18;translate:0 18px}
+  50%{opacity:.92;translate:12px -26px}
 }
-
-.hero {
-  grid-template-columns: minmax(0, 1.14fr) minmax(280px, .86fr);
-  gap: 24px;
+.home-page .hero-artwork{animation:heroFloat 7s ease-in-out infinite;will-change:transform}
+.panel-decor .ivy-top,
+.panel-decor .ivy-left,
+.panel-decor .ivy-right,
+.panel-decor .moss-bottom,
+.navbar-moss{
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
 }
-
-.hero-visual {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  min-width: 0;
-  transform: translateX(-18px);
+.panel-decor .ivy-top{
+  width:min(92%,900px);
+  left:50%;
+  transform:translateX(-50%);
 }
-
-.hero-artwork {
-  width: 118%;
-  max-width: 620px;
-  margin: 0;
+.panel-decor .ivy-left,
+.panel-decor .ivy-right{
+  height:min(82%,620px);
+  top:50%;
+  transform:translateY(-50%);
 }
-
-@media (max-width: 820px) {
-  .topbar {
-    grid-template-columns: minmax(88px, 1fr) minmax(210px, auto) minmax(88px, 1fr);
-    min-height: 64px;
-    padding: 5px 10px;
-  }
-
-  .title-cluster {
-    height: 56px;
-    grid-template-columns: 44px auto 58px;
-  }
-
-  .site-title-mini {
-    min-height: 42px;
-    font-size: 1rem;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-visual {
-    transform: translateX(-10px);
-  }
-
-  .hero-artwork {
-    width: min(112%, 620px);
-  }
+.panel-decor .moss-bottom{
+  width:min(94%,920px);
+  left:50%;
+  transform:translateX(-50%);
 }
-
-@media (max-width: 560px) {
-  .topbar {
-    grid-template-columns: 46px minmax(0, 1fr) 46px;
-    min-height: 58px;
-    padding: 4px 6px;
-  }
-
-  .menu-button,
-  .home-button {
-    width: 42px;
-    min-width: 42px;
-    min-height: 42px;
-    padding: 6px;
-  }
-
-  .title-cluster {
-    width: 100%;
-    height: 50px;
-    grid-template-columns: 30px minmax(0, auto) 34px;
-    gap: 3px;
-  }
-
-  .site-title-mini {
-    min-height: 36px;
-    font-size: .7rem;
-  }
-
-  .hero-visual {
-    transform: translateX(-5px);
-  }
-
-  .hero-artwork {
-    width: 104%;
-  }
+.topbar{align-items:center!important}
+.menu-wrap{display:flex;align-items:center;height:100%}
+.menu-button,.home-button{align-self:center!important;position:relative;top:-1px}
+@media(max-width:560px){
+  .home-background-layer{background-position:58% top}
+  .ambient-particles span:nth-child(n+6){display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .ambient-particles span,.home-page .hero-artwork{animation:none!important}
 }
