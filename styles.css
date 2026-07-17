@@ -946,3 +946,114 @@ img[src*="navbar-cat"] {
     animation: none !important;
   }
 }
+
+
+/* Definitive background and top-bar alignment fix */
+
+/*
+  The previous background used z-index:-2 inside an isolated body.
+  That placed it behind the body's solid green paint. Keep every visual
+  layer at a non-negative stacking level instead.
+*/
+body.home-page {
+  position: relative;
+  isolation: isolate;
+  background: #071c16 !important;
+}
+
+.home-background-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none;
+  background-image: url("images/home-background.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+}
+
+/* A very light tint, rather than an opaque green layer */
+body.home-page::before {
+  z-index: 1 !important;
+  background: linear-gradient(
+    180deg,
+    rgba(4,18,14,.05) 0%,
+    rgba(4,18,14,.12) 55%,
+    rgba(4,18,14,.24) 100%
+  ) !important;
+}
+
+.ambient-particles {
+  z-index: 2 !important;
+}
+
+body.home-page .page-shell {
+  position: relative;
+  z-index: 3 !important;
+}
+
+/* Let the page artwork remain visible through the large green container */
+body.home-page .central-panel {
+  background: rgba(7,28,22,.48) !important;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/* Individual content boxes remain readable */
+body.home-page .hero,
+body.home-page .section,
+body.home-page .footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* True geometric centring for the navbar */
+.topbar {
+  align-items: center !important;
+}
+
+.topbar > .menu-wrap,
+.topbar > .home-button {
+  align-self: center !important;
+}
+
+.menu-wrap {
+  height: auto !important;
+}
+
+/*
+  The button shadows extend downward and make correctly centred buttons
+  look low. Lift the button faces slightly while retaining the shadows.
+*/
+.topbar .menu-button,
+.topbar .home-button {
+  position: relative !important;
+  top: -4px !important;
+  margin-block: 0 !important;
+  transform: none !important;
+}
+
+.topbar .menu-button:hover,
+.topbar .home-button:hover {
+  transform: translateY(-2px) !important;
+}
+
+.topbar .menu-button:active,
+.topbar .home-button:active {
+  top: -1px !important;
+  transform: none !important;
+}
+
+@media (max-width: 700px) {
+  .home-background-layer {
+    background-position: 58% top !important;
+  }
+
+  .topbar .menu-button,
+  .topbar .home-button {
+    top: -3px !important;
+  }
+}
