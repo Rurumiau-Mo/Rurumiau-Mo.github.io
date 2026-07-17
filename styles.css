@@ -2272,7 +2272,7 @@ body:not(.about-page) .panel-decor .moss-bottom {
 /* July 2026: double the displayed About Me moss artwork while retaining its
    profile-centred anchor, and lift the homepage top-left decoration slightly. */
 :root {
-  --about-moss-display-scale: 2;
+  --about-moss-display-scale: 1.34;
   --home-top-left-adjust-y: -8px;
 }
 
@@ -2326,4 +2326,61 @@ body:not(.about-page) .panel-decor .moss-bottom {
 .about-page .about-text-content strong {
   color: #f5bedc;
   font-weight: 800;
+}
+
+
+/* July 2026: polished Talk To Me development-blog article. */
+.talk-to-me-journal {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.talk-to-me-journal h2 {
+  margin: 1.6em 0 0.65em;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  color: #d8f5c8;
+}
+
+.talk-to-me-journal h2:first-of-type {
+  margin-top: 1.1em;
+}
+
+.talk-to-me-journal p {
+  margin: 0 0 1.15em;
+  line-height: 1.8;
+}
+
+.talk-to-me-journal ul {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0.8rem 0 1.5rem;
+  padding-left: 1.35rem;
+}
+
+.talk-to-me-journal li {
+  line-height: 1.65;
+  padding-left: 0.2rem;
+}
+
+.talk-to-me-journal .nested-feature-list {
+  margin-top: 0.75rem;
+  gap: 0.45rem;
+}
+
+.talk-to-me-journal .journal-signoff {
+  margin-top: 1.5rem;
+  font-weight: 800;
+  color: #d8f5c8;
+  text-align: center;
+  font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+}
+
+.talk-to-me-journal .project-resource-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.talk-to-me-journal .project-resource-links a {
+  overflow-wrap: anywhere;
 }
