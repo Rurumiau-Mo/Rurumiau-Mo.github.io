@@ -1057,3 +1057,144 @@ body.home-page .footer {
     top: -3px !important;
   }
 }
+
+
+/* v2.4 — one shared background and one shared header alignment on every page */
+html {
+  min-height: 100%;
+  background: #071c16;
+}
+
+body.site-page {
+  position: relative !important;
+  isolation: isolate !important;
+  min-height: 100vh !important;
+  background: #071c16 !important;
+}
+
+/* This exact layer is now present on index, blog, projects, Talk To Me and updates. */
+.site-background-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  pointer-events: none !important;
+  background-color: #071c16;
+  background-image:
+    linear-gradient(180deg, rgba(4,18,14,.08), rgba(4,18,14,.28)),
+    url("images/home-background.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+/* Retire the old homepage-only layer so there is no competing background. */
+.home-background-layer {
+  display: none !important;
+}
+
+body.site-page::before {
+  content: none !important;
+}
+
+body.site-page .page-shell {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.site-page .central-panel {
+  background: rgba(7,28,22,.68) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+body.site-page .ambient-particles {
+  z-index: 1 !important;
+}
+
+/* Align both controls to the same centre line as the title text. */
+.topbar {
+  display: grid !important;
+  grid-template-columns: minmax(120px,1fr) auto minmax(120px,1fr) !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  height: 68px !important;
+  padding: 5px 12px !important;
+}
+
+.topbar .menu-wrap,
+.topbar .title-cluster,
+.topbar .home-button {
+  align-self: center !important;
+}
+
+.topbar .menu-wrap {
+  display: flex !important;
+  align-items: center !important;
+  height: 46px !important;
+}
+
+.topbar .title-cluster {
+  display: grid !important;
+  align-items: center !important;
+  height: 58px !important;
+  min-height: 58px !important;
+}
+
+.topbar .site-title-mini {
+  display: flex !important;
+  align-items: center !important;
+  height: 46px !important;
+  line-height: 1 !important;
+}
+
+.topbar .menu-button,
+.topbar .home-button {
+  position: static !important;
+  top: auto !important;
+  translate: none !important;
+  transform: none !important;
+  align-self: center !important;
+  min-height: 46px !important;
+  height: 46px !important;
+  margin: 0 !important;
+  padding-block: 0 !important;
+  line-height: 1 !important;
+  /* A balanced shadow avoids making the button look lower than its real centre. */
+  box-shadow: 0 5px 14px rgba(0,0,0,.28) !important;
+}
+
+.topbar .menu-button:hover,
+.topbar .home-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 7px 18px rgba(0,0,0,.3) !important;
+}
+
+.topbar .menu-button:active,
+.topbar .home-button:active {
+  transform: translateY(1px) !important;
+}
+
+@media (max-width: 820px) {
+  .topbar {
+    grid-template-columns: minmax(96px,1fr) auto minmax(96px,1fr) !important;
+    min-height: 62px !important;
+    height: 62px !important;
+  }
+  .topbar .title-cluster { height: 54px !important; min-height: 54px !important; }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    grid-template-columns: 48px minmax(0,1fr) 48px !important;
+    min-height: 56px !important;
+    height: 56px !important;
+    padding: 4px 6px !important;
+  }
+  .topbar .menu-wrap,
+  .topbar .menu-button,
+  .topbar .home-button { height: 42px !important; min-height: 42px !important; }
+  .topbar .title-cluster { height: 48px !important; min-height: 48px !important; }
+  .topbar .site-title-mini { height: 42px !important; }
+  .site-background-layer { background-position: 58% center !important; }
+}
