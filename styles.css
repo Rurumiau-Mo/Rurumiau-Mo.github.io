@@ -2010,3 +2010,25 @@ body.site-background-page .central-panel {
   }
 }
 
+
+/* July 2026 precise corner and About Me positioning adjustments. */
+.home-page .home-feature-panel .panel-corner-tl {
+  left: calc(var(--corner-top-left-offset-x) - 1.5cm) !important;
+}
+
+.home-page .home-feature-panel .panel-corner-tr {
+  top: calc(var(--corner-top-offset-y) - 1.5in) !important;
+}
+
+/* Move the complete About Me content section, including its corner artwork,
+   farther below the top navigation. */
+.about-page .about-panel {
+  margin-top: 1.5cm !important;
+}
+
+/* About Me border artwork is intentionally static. */
+.about-page .about-panel .panel-corner {
+  animation: none !important;
+  transform: none !important;
+  will-change: auto !important;
+}
