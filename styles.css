@@ -2198,3 +2198,73 @@ body:not(.about-page) .panel-decor .moss-bottom {
     right: calc(var(--about-corner-right-offset-x) + 1cm - 5px) !important;
   }
 }
+
+
+/* July 2026: stable page-specific decorative positioning controls. */
+:root {
+  --home-top-left-adjust-x: -10px;
+  --home-top-left-adjust-y: 0px;
+  --home-top-right-x: calc(var(--corner-top-right-offset-x) + 15px);
+  --home-top-right-y: -9px;
+
+  --about-top-right-extra-x: -18px;
+}
+
+/* Homepage final corner positions. */
+.home-page .home-feature-panel .panel-corner-tl {
+  left: calc(var(--corner-top-left-offset-x) - 0.5cm + var(--home-top-left-adjust-x)) !important;
+  top: calc(var(--corner-top-offset-y) + 1cm + var(--home-top-left-adjust-y)) !important;
+}
+
+.home-page .central-panel > .home-top-corner-tr {
+  top: var(--home-top-right-y) !important;
+  right: var(--home-top-right-x) !important;
+}
+
+/* About Me: move only the top-right border a few pixels farther right. */
+.about-page .about-panel .panel-corner-tr {
+  right: calc(var(--about-corner-right-offset-x) + 1cm + var(--about-top-right-extra-x)) !important;
+}
+
+/* A full-width anchor keeps the oversized moss artwork centred on the same
+   vertical centreline as profile.png, regardless of the artwork width. */
+.about-page .about-moss-anchor {
+  position: relative;
+  width: 100%;
+  height: var(--about-moss-floor-height);
+  flex: 0 0 var(--about-moss-floor-height);
+  margin-top: calc(clamp(4px, 1vw, 12px) + 1.5cm);
+  margin-bottom: calc(clamp(144px, 21vw, 258px) * -1);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.about-page .about-moss-anchor .about-moss-floor {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: 0 !important;
+  width: var(--about-moss-floor-width) !important;
+  height: 100% !important;
+  margin: 0 !important;
+  transform: translateX(-50%) !important;
+  background-position: center bottom !important;
+  background-size: contain !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --home-top-left-adjust-x: -8px;
+    --home-top-right-x: calc(var(--corner-top-right-offset-x) + 12px);
+    --home-top-right-y: -7px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --home-top-left-adjust-x: -6px;
+    --home-top-right-x: calc(var(--corner-top-right-offset-x) + 9px);
+    --home-top-right-y: -4px;
+    --about-top-right-extra-x: -12px;
+  }
+}
